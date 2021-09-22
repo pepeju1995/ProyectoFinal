@@ -1,0 +1,47 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+header {
+    margin: 0px auto;
+    background-color: dodgerblue;
+}
+
+.nav {
+    text-align: center;
+    display: inline-block;
+}
+
+.nav li{
+    float: left;
+    list-style: none;
+}
+
+.nav li a {
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    padding: 0px;
+}
+
+.nav li:hover ul {
+    display: block;
+    background-color: mediumspringgreen;
+}
+
+.nav li ul li {
+    position: relative;
+    margin-left: 0px;
+}
