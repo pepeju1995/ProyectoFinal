@@ -13,9 +13,22 @@ header {
     background-color: dodgerblue;
 }
 
-.nav {
+.menu {
     text-align: center;
+}
+
+.login {
+    text-align: center;
+    margin-top: 25%;
+}
+
+.login table {
+    margin: auto;
+}
+
+.nav {
     display: inline-block;
+    padding-inline-start: 0px;
 }
 
 .nav li{
