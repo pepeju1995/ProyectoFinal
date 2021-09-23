@@ -22,9 +22,5 @@
                 return $conn;
             }
         }
-
-        public function createTable($table) {
-
-        }
     }
 ?>

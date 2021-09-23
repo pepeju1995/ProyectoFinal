@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Soluciones Integrales S.L.</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style/style.css">
-    </head>
-    <body>
-        <?php
-            require_once "header.php";
-            require_once "login.php";
-        ?>
-    </body>
-</html>
+<?php
+    require_once 'libs/controller.php';
+    require_once 'libs/view.php';
+    require_once 'libs/model.php';
+    require_once 'libs/app.php';
+
+    $app = new App();
+
+?>
