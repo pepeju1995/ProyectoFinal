@@ -10,7 +10,8 @@
         <?php
             include "header.php"
         ?>
-        
-        <h1>Aseguradoras</h1>
+        <?php
+            include "newAseguradora.php"
+        ?>
     </body>
 </html>
