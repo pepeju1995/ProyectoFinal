@@ -12,6 +12,7 @@ class App{
             $archivoController = 'controllers/inicio.php';    
             require_once $archivoController;
             $controller = new Inicio();
+            $controller->loadModel('inicio');
             return false;
         }
 
@@ -20,6 +21,7 @@ class App{
         if(file_exists($archivoController)){
             require_once $archivoController;
             $controller = new $url[0];
+            $controller->loadModel($url[0]);
 
             if(isset($url[1])){
                 $controller->{$url[1]}();
