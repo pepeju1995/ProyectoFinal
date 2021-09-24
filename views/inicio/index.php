@@ -8,6 +8,10 @@
     </head>
 
     <body>
-        <h2>Seccion de Ayuda</h2>    
+        <?php require 'views/header.php';?>
+            <div id="inicio">
+                <h1 class="center">Bienvenido al sitio</h1>
+            </div>
+        <?php require 'views/footer.php'?>
     </body>
 </html>
