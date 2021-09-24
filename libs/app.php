@@ -4,9 +4,16 @@ require_once 'controllers/errores.php';
 class App{
     function __construct()
     {
-        $url = $_GET['url'];
+        $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
+
+        if(empty($url[0])){
+            $archivoController = 'controllers/inicio.php';    
+            require_once $archivoController;
+            $controller = new Inicio();
+            return false;
+        }
 
         $archivoController = 'controllers/'.$url[0].'.php';
 
