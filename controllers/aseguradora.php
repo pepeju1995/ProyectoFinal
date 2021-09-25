@@ -15,7 +15,7 @@
                 'cp' => $_POST['codigopostal'],
                 'telefono' => $_POST['telefono'],
                 'email' => $_POST['email'],
-                'persContacto' => $_POST['persContacto']
+                'contacto' => $_POST['contacto']
             ];
 
             $this->model->insert($newAseguradora);
