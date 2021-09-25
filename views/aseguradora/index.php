@@ -15,30 +15,30 @@
         <div class="formulario">
             <form action="<?php echo constant('URL'); ?>aseguradora/nuevaAseguradora" method="post">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre"  required>
+                    <input type="text" name="nombre" placeholder="Nombre de empresa"  required>
                     
                     <label for="cif">CIF</label>
-                    <input type="text" name="cif" required>
+                    <input type="text" name="cif" placeholder="CIF" required>
                     
                     <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" required>
+                    <input type="text" name="direccion" placeholder="Direccion" required>
                     
                     <label for="localidad">Localidad</label>
-                    <input type="text" name="localidad" required>
+                    <input type="text" name="localidad" placeholder="Localidad" required>
                     
                     <label for="codigopostal">Codigo Postal</label>
-                    <input type="text" name="codigopostal" required>
+                    <input type="text" name="codigopostal" placeholder="CP" required>
                     
                     <label for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" required>
+                    <input type="tel" name="telefono" placeholder="Telefono" required>
                            
                     <label for="email">Email</label>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" placeholder="test@test.com" required>
                            
                     <label for="contacto">Contacto</label>
-                    <input type="text" name="contacto" required>
+                    <input type="text" name="contacto" placeholder="Persona de contacto" required>
                         
-                    <input type="submit" value="Registrar aseguradora">
+                    <input type="submit" value="Registrar aseguradora" class="btn">
             </form>
         </div>
 

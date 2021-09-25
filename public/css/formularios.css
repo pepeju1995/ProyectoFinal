@@ -12,7 +12,22 @@ form {
 
 form label {
     text-align: left;
+    font-weight: bold;
     width: 150px;
-    margin: 5px 0;
+    margin: 10px 0;
     display: inline-block;
+}
+
+form input {
+    padding: 4px;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    font-weight: bold;
+    cursor: pointer;
 }

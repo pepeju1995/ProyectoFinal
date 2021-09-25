@@ -18,33 +18,22 @@
             <li><a href="<?php echo constant('URL'); ?>aseguradora">Aseguradora</a>
                 <ul>
                     <li><a href="">Nueva Aseguradora</a></li>
-                    <li><a href="">Mostrar Aseguradoras</a></li>
                 </ul>
             </li>
 
             <li><a href="<?php echo constant('URL'); ?>asegurado">Asegurado</a>
                 <ul>
                     <li><a href="">Nuevo Asegurado</a></li>
-                    <li><a href="">Mostrar Asegurados</a></li>
                 </ul>
             </li>
 
             <li><a href="">Averias</a>
                 <ul>
                     <li><a href="">Nueva Averia</a></li>
-                    <li><a href="">Mostrar Averias</a></li>
                 </ul>
             </li>
         </ul>
     </div>
 </header>
-        <!--<div id="header">
-            <ul>
-                <li><a href="inicio">Inicio</a></li>
-                <li><a href="aseguradora">Aseguradora</a></li>
-                <li><a href="asegurado">Asegurado</a></li>
-                <li><a href="averias">Averias</a></li>
-            </ul>
-        </div>-->
     </body>
 </html>

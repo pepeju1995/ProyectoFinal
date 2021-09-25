@@ -3,22 +3,31 @@
     padding: 0px;
 }
 
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: white;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
     text-align: center;
-    margin-top: 0px;
+    margin: auto;
 }
 
 header {
     margin: 0px auto;
+    height: 200px;
     background-color: dodgerblue;
 }
 
 .menu {
     text-align: center;
+    margin-top: 100px;
+    background-color: black;
+    color: #fff;
 }
 
 .login {
@@ -41,7 +50,6 @@ header {
 }
 
 .nav li a {
-    text-decoration: none;
     padding: 10px 12px;
     display: block;
 }
@@ -58,7 +66,3 @@ header {
     background-color: mediumspringgreen;
 }
 
-.nav li ul li {
-    position: relative;
-    margin-left: 0px;
-}
