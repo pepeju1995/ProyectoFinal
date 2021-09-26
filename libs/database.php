@@ -19,7 +19,8 @@ class Database{
     function connect(){
         $conn = new mysqli($this->host, $this->user, $this->password);
         if(!$conn){
-            die('No es posible realizar la conexion');
+            echo "ERROOOOOR";
+            return false;//die('No es posible realizar la conexion');
         } else {
             $conn->query("CREATE DATABASE IF NOT EXISTS " . $this->db);
             if(!$conn->query("USE " . $this->db)){

@@ -7,46 +7,49 @@
         <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formularios.css">
         <title>Document</title>
     </head>
-
+    
     <body>
-        <?php require_once 'views/header.php'?>
+        <?php require 'views/header.php'?>
+        
         <div class="contenedor">
-            <h1>Aseguradoras</h1>
+            <table class="centrar tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>CIF</th>
+                        <th>Direccion</th>
+                        <th>Localidad</th>
+                        <th>CP</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Contacto</th>
+                    </tr>
+                </thead>
 
-            <div>
-                <?php echo $this->mensaje; ?>
-            </div>
-
-            <div class="formulario">
-                <form action="<?php echo constant('URL'); ?>aseguradora/nuevaAseguradora" method="post">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" placeholder="Nombre de empresa"  required>
-                        
-                        <label for="cif">CIF</label>
-                        <input type="text" name="cif" placeholder="CIF" required>
-                        
-                        <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion" placeholder="Direccion" required>
-                        
-                        <label for="localidad">Localidad</label>
-                        <input type="text" name="localidad" placeholder="Localidad" required>
-                        
-                        <label for="codigopostal">Codigo Postal</label>
-                        <input type="text" name="codigopostal" placeholder="CP" required>
-                        
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" name="telefono" placeholder="Telefono" required>
-                            
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="test@test.com" required>
-                            
-                        <label for="contacto">Contacto</label>
-                        <input type="text" name="contacto" placeholder="Persona de contacto" required>
-                            
-                        <input type="submit" value="Registrar aseguradora" class="btn">
-                </form>
-            </div>
+                <tbody>
+                    <?php 
+                        include_once 'models/aseguradora.php';
+                        foreach($this->aseguradoras as $row){
+                            $aseguradora = new Aseguradora();
+                            $aseguradora = $row;
+                    ?>
+                    <tr class="filas">
+                        <td><?php echo $aseguradora->nombre; ?></td>
+                        <td><?php echo $aseguradora->cif; ?></td>
+                        <td><?php echo $aseguradora->direccion; ?></td>
+                        <td><?php echo $aseguradora->localidad; ?></td>
+                        <td><?php echo $aseguradora->cp; ?></td>
+                        <td><?php echo $aseguradora->telefono; ?></td>
+                        <td><?php echo $aseguradora->email; ?></td>
+                        <td><?php echo $aseguradora->contacto; ?></td>
+                        <td> <a href="<?php echo constant('URL') . 'aseguradoras/verAseguradora/'. $aseguradora->cif; ?> ">Editar</a> </td>
+                        <td> <a href="<?php echo constant('URL') . 'aseguradoras/eliminarAseguradora/'. $aseguradora->cif; ?>">Eliminar</a> </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
-        <?php require_once 'views/footer.php'?>
+
+        <?php require 'views/footer.php'?>
     </body>
 </html>

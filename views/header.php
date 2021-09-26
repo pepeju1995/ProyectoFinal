@@ -19,9 +19,9 @@
             <ul class="nav">
                 <li> <a href="<?php echo constant('URL'); ?>inicio">Inicio</a></li>
 
-                <li><a href="<?php echo constant('URL'); ?>aseguradora">Aseguradora</a>
+                <li><a href="<?php echo constant('URL'); ?>aseguradoras/verAseguradoras">Aseguradora</a>
                     <ul>
-                        <li><a href="">Nueva Aseguradora</a></li>
+                        <li><a href="<?php echo constant('URL'); ?>aseguradoras">Nueva Aseguradora</a></li>
                     </ul>
                 </li>
 
