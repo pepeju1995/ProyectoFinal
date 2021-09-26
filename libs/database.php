@@ -23,11 +23,10 @@ class Database{
         } else {
             $conn->query("CREATE DATABASE IF NOT EXISTS " . $this->db);
             if(!$conn->query("USE " . $this->db)){
-                echo 'No es posible conectarse a '. $this->db;
+                die('No es posible realizar la conexion');
             }
             //mysqli_select_db($conn, $this->db);
             $conn->query("SET NAMES " . $this->charset);
-            echo "Conexion exitosa.";
             return $conn;
         }
     }
