@@ -1,8 +1,18 @@
+.contenedor {
+    background-image: url('../img/fondo.jpg');
+    padding-top: 50px;
+    height: 600px;
+}
+
+.contenedor h1 {
+    text-align: center;
+}
+
 .formulario {
-    margin: 20px auto;
+    margin: 60px auto;
     width: 400px;
     padding: 20px;
-    background-color: #ccc;
+    background-color: rgba(92, 205, 162, 0.5);
     border-radius: 10%;
 }
 

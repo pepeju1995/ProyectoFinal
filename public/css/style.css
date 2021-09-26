@@ -12,21 +12,30 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-    text-align: center;
-    margin: auto;
-}
-
 header {
     margin: 0px auto;
+    background-color: burlywood;
+}
+
+.titulo {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h1 {
+    align-self: center;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.logo {
+    width: 200px;
     height: 200px;
-    background-color: dodgerblue;
 }
 
 .menu {
-    text-align: center;
-    margin-top: 100px;
-    background-color: black;
+    margin-top: 50px;
     color: #fff;
 }
 
@@ -40,8 +49,9 @@ header {
 }
 
 .nav {
-    display: inline-block;
     padding-inline-start: 0px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav li{

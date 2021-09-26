@@ -10,30 +10,34 @@
 
     <body>
     <header>
-    <h1>Soluciones Integrales S.L.</h1>
-    <div class="menu">
-        <ul class="nav">
-            <li> <a href="<?php echo constant('URL'); ?>inicio">Inicio</a></li>
+        <div class="titulo">
+            <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logotipo" class="logo">
+            <h1>Soluciones Integrales S.L.</h1>
+        </div>
 
-            <li><a href="<?php echo constant('URL'); ?>aseguradora">Aseguradora</a>
-                <ul>
-                    <li><a href="">Nueva Aseguradora</a></li>
-                </ul>
-            </li>
+        <div class="menu">
+            <ul class="nav">
+                <li> <a href="<?php echo constant('URL'); ?>inicio">Inicio</a></li>
 
-            <li><a href="<?php echo constant('URL'); ?>asegurado">Asegurado</a>
-                <ul>
-                    <li><a href="">Nuevo Asegurado</a></li>
-                </ul>
-            </li>
+                <li><a href="<?php echo constant('URL'); ?>aseguradora">Aseguradora</a>
+                    <ul>
+                        <li><a href="">Nueva Aseguradora</a></li>
+                    </ul>
+                </li>
 
-            <li><a href="">Averias</a>
-                <ul>
-                    <li><a href="">Nueva Averia</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+                <li><a href="<?php echo constant('URL'); ?>asegurado">Asegurado</a>
+                    <ul>
+                        <li><a href="">Nuevo Asegurado</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">Averias</a>
+                    <ul>
+                        <li><a href="">Nueva Averia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 </header>
     </body>
 </html>
