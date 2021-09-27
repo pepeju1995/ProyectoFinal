@@ -16,10 +16,9 @@
             
             <?php if($this->mensaje != ""){ ?>
             <div>
-                <p class="mensaje"><?php echo $this->mensaje; ?></p>
+                <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
             <?php } ?>
-            <div id="respuesta"></div>
 
             <table class="centrar tabla">
                 <thead>

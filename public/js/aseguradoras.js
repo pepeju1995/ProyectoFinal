@@ -8,7 +8,7 @@ botones.forEach(boton => {
         const confirm = window.confirm("Estas seguro de eliminar al alumno " + id + "?")
 
         if(confirm){
-            httpRequest("http://localhost/ProyectoFinal/aseguradoras/eliminarAseguradora/" + id, () => {
+            httpRequest("http://localhost/ProyectoFinal/aseguradoras/eliminarAseguradora/" + id, function(e){
                 document.querySelector("#respuesta").innerHTML = "Aseguradora eliminada correctamente";
                 const tbody = document.querySelector("#tbody-aseguradoras");
                 const fila = document.querySelector("#fila-" + id);
