@@ -14,14 +14,14 @@ class Aseguradoras extends Controller {
 
     function crearAseguradora(){
         $newAseguradora = array(
-            'nombre' => $_POST['nombre'],
-            'cif' => $_POST['cif'],
-            'direccion' => $_POST['direccion'],
-            'localidad' => $_POST['localidad'],
-            'cp' => (int) $_POST['codigopostal'],
-            'telefono' => (int) $_POST['telefono'],
-            'email' => $_POST['email'],
-            'contacto' => $_POST['contacto']
+            $_POST['nombre'],
+            $_POST['cif'],
+            $_POST['direccion'],
+            $_POST['localidad'],
+            (int) $_POST['codigopostal'],
+            (int) $_POST['telefono'],
+            $_POST['email'],
+            $_POST['contacto']
         );
 
         if($this->model->insert($newAseguradora)){
@@ -31,7 +31,7 @@ class Aseguradoras extends Controller {
         }
 
         $this->view->mensaje = $mensaje;
-        $this->render();
+        $this->verAseguradoras();
     }
 
     function verAseguradoras(){
@@ -53,7 +53,6 @@ class Aseguradoras extends Controller {
     function actualizarAseguradora(){
         session_start();
         $newAseguradora = array(
-            0,
             $_POST['nombre'],
             $_SESSION["cif_aseguradora"],
             $_POST['direccion'],
@@ -77,8 +76,16 @@ class Aseguradoras extends Controller {
         $this->view->render('aseguradora/detalle');
     }
 
-    function eliminarAseguradora(){
+    function eliminarAseguradora($param = null){
+        $id = $param[0];
 
+        if($this->model->drop($id)){
+            $mensaje = "Elemento eliminado";
+        } else {
+            $mensaje = "No se pudo eliminar el elemento";
+        }
+        //$this->verAseguradoras();
+        echo $mensaje;
     }
 
 }

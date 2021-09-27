@@ -12,10 +12,12 @@
         <?php require_once 'views/header.php'?>
         <div class="contenedor">
             <h1>Informacion de <?php echo $this->aseguradora->nombre; ?></h1>
-
+            
+            <?php if($this->mensaje != ""){ ?>
             <div>
-                <?php echo $this->mensaje; ?>
+                <p class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
+            <?php } ?>
 
             <div class="centrar formulario">
                 <form action="<?php echo constant('URL'); ?>aseguradoras/actualizarAseguradora" method="post">

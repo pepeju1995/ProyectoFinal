@@ -12,14 +12,14 @@ class Aseguradora{
     public $contacto;
 
     public function datosAseguradora($datos){
-        $this->nombre = $datos[1];
-        $this->cif = $datos[2];
-        $this->direccion = $datos[3];
-        $this->localidad = $datos[4];
-        $this->cp = $datos[5];
-        $this->telefono = $datos[6];
-        $this->email = $datos[7];
-        $this->contacto = end($datos);
+        $this->nombre = $datos[0];
+        $this->cif = $datos[1];
+        $this->direccion = $datos[2];
+        $this->localidad = $datos[3];
+        $this->cp = $datos[4];
+        $this->telefono = $datos[5];
+        $this->email = $datos[6];
+        $this->contacto = $datos[7];
     }
 
 }

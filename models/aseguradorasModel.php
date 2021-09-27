@@ -33,10 +33,10 @@ class AseguradorasModel extends Model{
 
             $stmt = $query->prepare("INSERT INTO aseguradoras (nombre, cif, direccion, localidad, cp, telefono, email, contacto) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param('ssssiiss', $datos['nombre'], $datos['cif'], $datos['direccion'], $datos['localidad'], $datos['cp'],
-            $datos['telefono'], $datos['email'], $datos['contacto']);
+            $stmt->bind_param('ssssiiss', $datos[0], $datos[1], $datos[2], $datos[3], $datos[4],
+            $datos[5], $datos[6], $datos[7]);
             if($stmt->execute()){
-                echo "Nueva aseguradora creada";
+                return true;
             }
         }
     }
@@ -74,8 +74,16 @@ class AseguradorasModel extends Model{
         
     }
 
-    public function drop(){
-
+    public function drop($id){
+        $query = $this->db->connect();
+        $stmt = $query->prepare("DELETE FROM aseguradoras WHERE cif = ?");
+        try{
+            $stmt->bind_param('s', $id);
+            $stmt->execute();
+            return true;
+        } catch(mysqli_sql_exception $e) {
+            return false;
+        }
     }
 }
 
