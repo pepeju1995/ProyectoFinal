@@ -24,6 +24,9 @@
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" placeholder="Nombre de empresa"  required>
                         
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                        
                         <label for="cif">CIF</label>
                         <input type="text" name="cif" placeholder="CIF" required>
                         

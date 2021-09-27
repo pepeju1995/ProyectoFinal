@@ -7,6 +7,7 @@ class AseguradorasModel extends Model{
     public function __construct()
     {
         parent::__construct();
+        $this->db->connect()->query(constant('TABLAASEGURADORA'));
     }
 
     public function get(){
@@ -29,13 +30,16 @@ class AseguradorasModel extends Model{
     public function insert($datos){
         if($datos){
             $query = $this->db->connect();
-            $query->query(constant('TABLAASEGURADORA'));
 
             $stmt = $query->prepare("INSERT INTO aseguradoras (nombre, cif, direccion, localidad, cp, telefono, email, contacto) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param('ssssiiss', $datos[0], $datos[1], $datos[2], $datos[3], $datos[4],
-            $datos[5], $datos[6], $datos[7]);
-            if($stmt->execute()){
+            $stmt->bind_param('ssssiiss', $datos[0], $datos[2], $datos[3], $datos[4], $datos[5],
+            $datos[6], $datos[7], $datos[8]);
+            $stmt->execute();
+            $user_pass = md5($datos[1]);
+            $create_user = $query->prepare("INSERT INTO usuarios (user, pass, rol) VALUES (?, ?, 'user')");
+            $create_user->bind_param('ss', $datos[2], $user_pass);
+            if($create_user->execute()){
                 return true;
             }
         }

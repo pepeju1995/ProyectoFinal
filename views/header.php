@@ -17,7 +17,7 @@
 
         <div class="menu">
             <ul class="nav">
-                <li> <a href="<?php echo constant('URL'); ?>inicio">Inicio</a></li>
+                <li> <a href="<?php echo constant('URL'); ?>login">Inicio</a></li>
 
                 <li><a href="<?php echo constant('URL'); ?>aseguradoras/verAseguradoras">Aseguradora</a>
                     <ul>

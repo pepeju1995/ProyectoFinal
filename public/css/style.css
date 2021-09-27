@@ -41,11 +41,26 @@ header {
 
 .login {
     text-align: center;
-    margin-top: 25%;
+    width: 400px;
+    margin: 50px auto;
 }
 
-.login table {
-    margin: auto;
+.login form {
+    background-color: rgba(92, 205, 162, 0.5);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login form input{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.login form button {
+    padding: 5px;
 }
 
 .nav {

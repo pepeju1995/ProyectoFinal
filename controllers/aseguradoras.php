@@ -15,6 +15,7 @@ class Aseguradoras extends Controller {
     function crearAseguradora(){
         $newAseguradora = array(
             $_POST['nombre'],
+            $_POST['contraseña'],
             $_POST['cif'],
             $_POST['direccion'],
             $_POST['localidad'],
