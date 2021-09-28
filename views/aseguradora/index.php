@@ -50,9 +50,10 @@
                         <td><?php echo $aseguradora->telefono; ?></td>
                         <td><?php echo $aseguradora->email; ?></td>
                         <td><?php echo $aseguradora->contacto; ?></td>
+                        <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
                         <td> <a href="<?php echo constant('URL') . 'aseguradoras/verAseguradora/'. $aseguradora->cif; ?> ">Editar</a> </td>
                         <td><button class="bEliminar" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
-                        <td> <a href="<?php echo constant('URL') . 'aseguradoras/eliminarAseguradora/'. $aseguradora->cif; ?>">Eliminar</a> </td>
+                        <?php }?>
                     </tr>
                     <?php } ?>
                 </tbody>

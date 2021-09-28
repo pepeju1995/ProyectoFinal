@@ -3,8 +3,9 @@ class Aseguradoras extends Controller {
 
     function __construct()
     {
-        parent::__construct();
+        session_start();
         if(isset($_SESSION['user'])){
+            parent::__construct();
             $this->view->aseguradoras = [];
             $this->view->mensaje = "";
         } else {
@@ -49,17 +50,14 @@ class Aseguradoras extends Controller {
         $id = $param[0];
         $aseguradora = $this->model->getById($id);
 
-        session_start();
-        $_SESSION["cif_aseguradora"] = $aseguradora->cif;
         $this->view->aseguradora = $aseguradora;
         $this->view->render('aseguradora/detalle');
     }
 
     function actualizarAseguradora(){
-        session_start();
         $newAseguradora = array(
             $_POST['nombre'],
-            $_SESSION["cif_aseguradora"],
+            $_SESSION["user"],
             $_POST['direccion'],
             $_POST['localidad'],
             (int) $_POST['codigopostal'],
@@ -67,7 +65,6 @@ class Aseguradoras extends Controller {
             $_POST['email'],
             $_POST['contacto']
         );
-        unset($_SESSION["cif_aseguradora"]);
 
         if($this->model->update($newAseguradora)){
             $aseguradora = new Aseguradora();
