@@ -10,6 +10,11 @@
 
     <body>
     <header>
+        <?php if(isset($_SESSION['user'])){?>
+        <div>
+            <h1 style="position:absolute;"><a href="<?php echo constant('URL'); ?>login/cerrarSesion">LogOut</a><h1>
+        </div>
+        <?php }?>
         <div class="titulo">
             <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logotipo" class="logo">
             <h1>Soluciones Integrales S.L.</h1>

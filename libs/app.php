@@ -16,7 +16,7 @@ class App{
             $controller->render();
             return false;
         }
-
+        
         $archivoController = 'controllers/'.$url[0].'.php';
 
         if(file_exists($archivoController)){

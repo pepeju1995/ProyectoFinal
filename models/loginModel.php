@@ -4,44 +4,25 @@ class LoginModel extends Model{
     function __construct(){
         parent::__construct();
         $query = $this->db->connect();
-        if($query->query(constant('TABLAUSUARIOS'))){
-            echo "Tabla creada";
-        }
+        $query->query(constant('TABLAUSUARIOS'));
         $clave_admin = md5('admin');
         $crear_admin = "INSERT INTO usuarios (user, pass, rol) VALUES ('admin', '$clave_admin', 'admin');";
-        if($query->query($crear_admin)){
-            echo "ADMIN Creado";
-        }
+        $query->query($crear_admin);
     }
 
     function login($user, $pass){
         $query = $this->db->connect();
-        $stmt = $query->prepare('SELECT * FROM usuarios WHERE user=?');
-        $stmt->bind_param('s', $user);
+        $password = md5($pass);
+        $stmt = $query->prepare('SELECT * FROM usuarios WHERE user=? AND pass=?');
+        $stmt->bind_param('ss', $user, $password);
         $stmt->execute();
         $result = $stmt->get_result()->fetch_row();
 
-        if(count($result) > 0 && md5($pass) == $result[2]){
-            session_start();
-            $_SESSION['user_id'] = $result[0];
-            if($_SESSION['user_id'] == '1'){
-                header('Location: http://localhost/ProyectoFinal/aseguradoras/verAseguradoras');
-            }
-            echo "Sesion iniciada correctamente";
-        } else {
-            echo "Las credenciales no son correctas";
-        }
-    }
-
-    function verificarClave($clave, $claveVer){
-        if(md5($clave) == $claveVer){
+        if(count($result)){
             return true;
+        } else {
+            return false;
         }
-        return false;
-    }
-
-    function logout(){
-
     }
 }
 

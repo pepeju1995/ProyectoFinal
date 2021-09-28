@@ -4,8 +4,12 @@ class Aseguradoras extends Controller {
     function __construct()
     {
         parent::__construct();
-        $this->view->aseguradoras = [];
-        $this->view->mensaje = "";
+        if(isset($_SESSION['user'])){
+            $this->view->aseguradoras = [];
+            $this->view->mensaje = "";
+        } else {
+            header('Location: '. constant('URL'). 'login');
+        }
     }
 
     function render($vista = 'nuevaAseguradora'){
