@@ -8,7 +8,7 @@ class LoginModel extends Model{
             echo "Tabla creada";
         }
         $clave_admin = md5('admin');
-        $crear_admin = "INSERT INTO usuarios (user, pass, rol) VALUES ('admin', '$clave_admin', 'user');";
+        $crear_admin = "INSERT INTO usuarios (user, pass, rol) VALUES ('admin', '$clave_admin', 'admin');";
         if($query->query($crear_admin)){
             echo "ADMIN Creado";
         }
@@ -22,7 +22,11 @@ class LoginModel extends Model{
         $result = $stmt->get_result()->fetch_row();
 
         if(count($result) > 0 && md5($pass) == $result[2]){
+            session_start();
             $_SESSION['user_id'] = $result[0];
+            if($_SESSION['user_id'] == '1'){
+                header('Location: http://localhost/ProyectoFinal/aseguradoras/verAseguradoras');
+            }
             echo "Sesion iniciada correctamente";
         } else {
             echo "Las credenciales no son correctas";
