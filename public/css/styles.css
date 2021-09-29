@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    margin: 50px auto;
+    text-align: center;
+}
+
+.contenedor{
+    margin: 20px auto;
+}
+
+.contenedor form{
+    text-align: center;
+    border: 1px solid rgb(13, 16, 199);
+    width: 300px;
+    margin: auto;
+}
+
+.contenedor form input{
+    text-align: center;
+}

@@ -13,8 +13,12 @@ class Aseguradoras extends Controller {
         }
     }
 
-    function render($vista = 'nuevaAseguradora'){
+    function render($vista = 'index'){
         $this->view->render('aseguradora/'.$vista);   
+    }
+
+    function nuevaAseguradora(){
+        $this->render('nuevaAseguradora');
     }
 
     function crearAseguradora(){
