@@ -36,8 +36,23 @@
             }
         }
 
-        function modificarAsegurado($id){
+        function actualizarAsegurado(){
+            $aseguradoActualizado = array(
+                (int)$_POST['id'],
+                $_POST['direccion'], 
+                $_POST['localidad'], 
+                (int)$_POST['cp'], 
+                (int)$_POST['telefono'],
+                $_POST['direccion_rep'], 
+                $_POST['localidad_rep'], 
+                (int)$_POST['cp_rep']
+            );
 
+            if($this->model->update($aseguradoActualizado)){
+                echo "Actualizado con exito";
+            } else {
+                echo  "No se pudo actualizar";
+            }
         }
 
         function verAsegurados(){

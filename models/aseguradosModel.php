@@ -66,8 +66,20 @@ class AseguradosModel extends Model{
         }
     }
 
-    function update($id){
-
+    function update($datos){
+        $query = $this->db->connect();
+        $stmt = $query->prepare("UPDATE asegurados SET direccion=?, localidad=?, cp=?, telefono=?, direccion_rep=?, localidad_rep=?, cp_rep=? WHERE id=?");
+        try{
+            $stmt->bind_param('ssiissii', $datos[3], $datos[4], $datos[5], $datos[6], $datos[7], $datos[8],
+                $datos[9], $datos[0]);
+            if($stmt->execute()){
+                return true;
+            } else {
+                return false;
+            }
+        } catch(mysqli_sql_exception $e) {
+            return false;
+        }
     }
     
 }

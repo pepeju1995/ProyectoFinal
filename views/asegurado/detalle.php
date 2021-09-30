@@ -20,30 +20,33 @@
             <?php } ?>
 
             <div class="centrar formulario">
-                <form action="<?php echo constant('URL'); ?>aseguradoras/actualizarAseguradora" method="post">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" value="<?php echo $this->asegurado->nombre; ?>" >
+                <form action="<?php echo constant('URL'); ?>asegurados/actualizarAsegurado" method="post">
+
+                        <input type="text" name="id" hidden value="<?php echo $this->asegurado->nombre; ?>">
                         
-                        <label for="cif">CIF</label>
-                        <input type="text" name="cif" disabled value="<?php echo $this->asegurado->direccion; ?>" >
+                        <input type="text" name="nombre" disabled value="<?php echo $this->asegurado->nombre; ?>" >
                         
-                        <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion" value="<?php echo $this->asegurado->localidad; ?>" >
+                        <input type="text" name="apellido" disabled value="<?php echo $this->asegurado->apellido; ?>">                        
+
+                        <input type="text" name="direccion" value="<?php echo $this->asegurado->direccion; ?>" >
                         
-                        <label for="localidad">Localidad</label>
-                        <input type="text" name="localidad" value="<?php echo $this->asegurado->cp; ?>" >
                         
-                        <label for="codigopostal">Codigo Postal</label>
-                        <input type="text" name="codigopostal" value="<?php echo $this->asegurado->telefono; ?>" >
+                        <input type="text" name="localidad" value="<?php echo $this->asegurado->localidad; ?>" >
                         
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" name="telefono" value="<?php echo $this->asegurado->direccion_rep; ?>" >
+                        
+                        <input type="text" name="cp" value="<?php echo $this->asegurado->cp; ?>" >
+                        
+                        
+                        <input type="text" name="telefono" value="<?php echo $this->asegurado->telefono; ?>" >
+                        
+                        
+                        <input type="tel" name="direccion_rep" value="<?php echo $this->asegurado->direccion_rep; ?>" >
                             
-                        <label for="email">Email</label>
-                        <input type="email" name="email" value="<?php echo $this->asegurado->localidad_rep; ?>" >
+                        
+                        <input type="text" name="localidad_rep" value="<?php echo $this->asegurado->localidad_rep; ?>" >
                             
-                        <label for="contacto">Contacto</label>
-                        <input type="text" name="contacto" value="<?php echo $this->asegurado->cp_rep; ?>" >
+                        
+                        <input type="text" name="cp_rep" value="<?php echo $this->asegurado->cp_rep; ?>" >
                             
                         <input type="submit" value="Actualizar" class="btn">
                 </form>
