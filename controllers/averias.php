@@ -24,10 +24,28 @@ class Averias extends Controller{
         );
 
         if($this->model->insert($nuevaAveria)){
-            echo "Nueva averia creada.";
+            $this->verAverias();
         } else {
             echo "No puede crearse la averia";
         }
+    }
+
+    function verAverias(){
+        $averias = $this->model->get();
+        $this->view->averias = $averias;
+        $this->render('verTodas');
+    }
+
+    function verAveria($id){
+
+    }
+
+    function modificarAveria(){
+
+    }
+
+    function eliminarAveria($id){
+
     }
 }
 

@@ -1,5 +1,7 @@
 <?php
 
+include_once 'models/averia.php';
+
 class AveriasModel extends Model{
     function __construct(){
         parent::__construct();
@@ -14,6 +16,22 @@ class AveriasModel extends Model{
         if($stmt->execute()){
             return true;
         } else {
+            return false;
+        }
+    }
+
+    function get(){
+        $averias = [];
+        try{
+            $query = $this->db->connect()->query("SELECT * FROM averias;");
+            
+            while($row = $query->fetch_row()){
+                $item = new Averia();
+                $item->crearAveria($row);
+                array_push($averias, $item);
+            }
+            return $averias;
+        } catch(mysqli_sql_exception $e){
             return false;
         }
     }

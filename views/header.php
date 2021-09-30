@@ -28,7 +28,7 @@
 
                     <li><a href="<?php echo constant('URL'); ?>asegurados">Asegurado</a></li>
 
-                    <li><a href="">Averias</a></li>
+                    <li><a href="<?php echo constant('URL'); ?>averias">Averias</a></li>
                 </ul>
             </div>
         </header>
