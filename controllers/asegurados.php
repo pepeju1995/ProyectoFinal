@@ -42,7 +42,7 @@
 
         function verAsegurados(){
             if($_SESSION['user'] != 'admin'){
-                $asegurados = $this->model->getById($_SESSION['user']);
+                $asegurados = $this->model->getByAseguradora($_SESSION['user']);
                 $this->view->asegurados = $asegurados;
             } else {
                 $asegurados = $this->model->get();
@@ -51,8 +51,12 @@
             $this->render('verTodos');
         }
 
-        function verAsegurado($id){
-
+        function verAsegurado($id = null) {
+            if($id != null){
+                $asegurado = $this->model->getById($id[0]);
+                $this->view->asegurado = $asegurado;
+                $this->render('detalle');
+            }
         }
 
         function eliminarAsegurado($id){

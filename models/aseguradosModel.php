@@ -40,10 +40,10 @@ class AseguradosModel extends Model{
         }
     }
 
-    function getById($id){
+    function getByAseguradora($aseguradora){
         $asegurados = [];
         try{
-            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE aseguradora = '$id'");
+            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE aseguradora = '$aseguradora'");
             while($row = $query->fetch_row()){
                 $item = new Asegurado();
                 $item->datosAsegurado($row);
@@ -53,6 +53,21 @@ class AseguradosModel extends Model{
         } catch(mysqli_sql_exception $e){
                 return false;
         }
+    }
+
+    function getById($id){
+        try{
+            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE id = '$id'");
+            $item = new Asegurado();
+            $item->datosAsegurado($query->fetch_row());
+            return $item;
+        } catch(mysqli_sql_exception $e){
+                return false;
+        }
+    }
+
+    function update($id){
+
     }
     
 }

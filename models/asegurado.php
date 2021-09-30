@@ -1,6 +1,7 @@
 <?php
 
 class Asegurado{
+    public $id;
     public $nombre;
     public $apellido;
     public $direccion;
@@ -13,16 +14,17 @@ class Asegurado{
     public $aseguradora;
 
     public function datosAsegurado($datos){
-        $this->nombre = $datos[0];
-        $this->apellido = $datos[1];
-        $this->direccion = $datos[2];
-        $this->localidad = $datos[3];
-        $this->cp = $datos[4];
-        $this->telefono = $datos[5];
-        $this->direccion_rep = $datos[6];
-        $this->localidad_rep = $datos[7];
-        $this->cp_rep = $datos[8];
-        $this->aseguradora = $datos[9];
+        $this->id = $datos[0];
+        $this->nombre = $datos[1];
+        $this->apellido = $datos[2];
+        $this->direccion = $datos[3];
+        $this->localidad = $datos[4];
+        $this->cp = $datos[5];
+        $this->telefono = $datos[6];
+        $this->direccion_rep = $datos[7];
+        $this->localidad_rep = $datos[8];
+        $this->cp_rep = $datos[9];
+        $this->aseguradora = $datos[10];
     }
 }
 
