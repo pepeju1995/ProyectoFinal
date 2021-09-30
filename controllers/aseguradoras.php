@@ -61,7 +61,7 @@ class Aseguradoras extends Controller {
     function actualizarAseguradora(){
         $newAseguradora = array(
             $_POST['nombre'],
-            $_SESSION["user"],
+            $_SESSION['user'],
             $_POST['direccion'],
             $_POST['localidad'],
             (int) $_POST['codigopostal'],

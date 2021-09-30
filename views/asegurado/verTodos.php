@@ -53,6 +53,7 @@
                         <td><?php echo $asegurado->cp_rep; ?></td>
                         <td><?php echo $asegurado->aseguradora; ?></td>
                         <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">HOLA</a></td>
+                        <td><a href="<?php echo constant('URL'); ?>averias/"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>CREAR AVERIA</a></td>
                     </tr>
                     <?php } ?>
                 </tbody>
