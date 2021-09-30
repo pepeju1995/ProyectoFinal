@@ -1,10 +1,11 @@
 <?php
-    class Asegurado extends Controller {
+    class Asegurados extends Controller {
         function __construct()
         {
             session_start();
             if(isset($_SESSION['user'])){
                 parent::__construct();
+                $this->view->asegurados = [];
             } else {
                 header('Location: '. constant('URL'). 'login');
             }
@@ -29,7 +30,7 @@
                 $_SESSION['user']
             );
             if($this->model->insert($nuevoAsegurado)){
-                echo "Nuevo asegurado creado";
+                $this->verAsegurados();
             } else {
                 echo "No se ha podido crear el asegurado";
             }
@@ -40,7 +41,9 @@
         }
 
         function verAsegurados(){
-
+            $asegurados = $this->model->get();
+            $this->view->asegurados = $asegurados;
+            $this->render('verTodos');
         }
 
         function verAsegurado($id){

@@ -20,7 +20,7 @@
             <?php } ?>
 
             <div class="centrar formulario">
-                <form action="<?php echo constant('URL'); ?>asegurado/crearAsegurado" method="post">
+                <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
                     <fieldset>
                         <input type="text" name="nombre" placeholder="Nombre">
                     </fieldset>
