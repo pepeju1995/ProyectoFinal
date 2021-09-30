@@ -39,6 +39,21 @@ class AseguradosModel extends Model{
             return false;
         }
     }
+
+    function getById($id){
+        $asegurados = [];
+        try{
+            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE aseguradora = '$id'");
+            while($row = $query->fetch_row()){
+                $item = new Asegurado();
+                $item->datosAsegurado($row);
+                array_push($asegurados, $item);
+            }
+            return $asegurados;
+        } catch(mysqli_sql_exception $e){
+                return false;
+        }
+    }
     
 }
 

@@ -19,7 +19,7 @@ class Login extends Controller {
             if($_SESSION['user'] == 'admin'){
                 header('Location: '. constant('URL'). 'aseguradoras/verAseguradoras');
             } else {
-                header('Location: '. constant('URL'). 'aseguradoras/verAseguradora/'. $_SESSION['user']);
+                header('Location: '. constant('URL'). 'asegurados/verAsegurados/');
             }
         }
     }

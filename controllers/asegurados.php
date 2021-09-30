@@ -41,8 +41,13 @@
         }
 
         function verAsegurados(){
-            $asegurados = $this->model->get();
-            $this->view->asegurados = $asegurados;
+            if($_SESSION['user'] != 'admin'){
+                $asegurados = $this->model->getById($_SESSION['user']);
+                $this->view->asegurados = $asegurados;
+            } else {
+                $asegurados = $this->model->get();
+                $this->view->asegurados = $asegurados;
+            }
             $this->render('verTodos');
         }
 
