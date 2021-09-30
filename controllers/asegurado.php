@@ -16,7 +16,23 @@
         }
 
         function crearAsegurado(){
-
+            $nuevoAsegurado = array(
+                $_POST['nombre'],
+                $_POST['apellido'],
+                $_POST['direccion'],
+                $_POST['localidad'],
+                (int)$_POST['cp'],
+                (int)$_POST['telefono'],
+                $_POST['direccion_rep'],
+                $_POST['localidad_rep'],
+                (int)$_POST['cp_rep'],
+                $_SESSION['user']
+            );
+            if($this->model->insert($nuevoAsegurado)){
+                echo "Nuevo asegurado creado";
+            } else {
+                echo "No se ha podido crear el asegurado";
+            }
         }
 
         function modificarAsegurado($id){
