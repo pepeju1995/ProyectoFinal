@@ -22,6 +22,9 @@
             <div class="centrar formulario">
                 <form action="<?php echo constant('URL'); ?>averias/crearAveria" method="post">
                     <fieldset>
+                        <input type="text" disbled name="asegurado" value="<?php echo $this->asegurado; ?>">
+                    </fieldset>
+                    <fieldset>
                         <textarea name="descripcion" placeholder="Descripcion de la averia" cols="30" rows="10"></textarea>
                     </fieldset>
                     <fieldset>

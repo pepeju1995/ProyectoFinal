@@ -55,8 +55,8 @@
                         <td><?php echo $asegurado->cp_rep; ?></td>
                         <td><?php echo $asegurado->aseguradora; ?></td>
                         <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
-                        <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>Editar</a></td>
-                        <td><a href="<?php echo constant('URL'); ?>averias/"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>Nueva Averia</a></td>
+                        <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">Editar</a></td>
+                        <td><a href="<?php echo constant('URL'); ?>averias/nuevaAveria/<?php echo $asegurado->id; ?>">Nueva Averia</a></td>
                         <td><a href="<?php echo constant('URL')?>asegurados/eliminarAsegurado/<?php echo $asegurado->id?>">Eliminar</a></td>
                         <?php } ?>
                     </tr>

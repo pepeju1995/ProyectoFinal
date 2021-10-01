@@ -11,13 +11,11 @@ class AveriasModel extends Model{
         $query = $this->db->connect();
         $stmt = $query->prepare("INSERT INTO averias (aseguradora, asegurado, fecha, descripcion) 
             VALUES (?, ?, now(), ?)");
-        $stmt->bind_param('sss', $datos[0], $_SESSION['id_asegurado'], $datos[1]);
+        $stmt->bind_param('sss', $_SESSION['user'], $datos[0], $datos[1]);
 
         if($stmt->execute()){
             return true;
-            unset( $_SESSION['id_asegurado']);
         } else {
-            unset( $_SESSION['id_asegurado']);
             return false;
         }
     }
@@ -38,9 +36,9 @@ class AveriasModel extends Model{
         }
     }
 
-    function getByAsegurado(){
+    function getByAsegurado($id){
         $averias = [];
-        $asegurado = $_SESSION['id_asegurado'];
+        $asegurado = $id;
         try{
             $query = $this->db->connect()->query("SELECT * FROM averias WHERE asegurado = '$asegurado'");
 
@@ -49,10 +47,8 @@ class AveriasModel extends Model{
                 $item->crearAveria($row);
                 array_push($averias, $item);
             }
-            unset( $_SESSION['id_asegurado']);
             return $averias;
         } catch(mysqli_sql_exception $e){
-            unset( $_SESSION['id_asegurado']);
             return false;
         }
     }

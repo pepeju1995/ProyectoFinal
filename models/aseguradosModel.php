@@ -70,13 +70,11 @@ class AseguradosModel extends Model{
         $query = $this->db->connect();
         $stmt = $query->prepare("UPDATE asegurados SET direccion=?, localidad=?, cp=?, telefono=?, direccion_rep=?, localidad_rep=?, cp_rep=? WHERE dni=?");
         try{
-            $stmt->bind_param('ssiissii', $datos[3], $datos[4], $datos[5], $datos[6], $datos[7], $datos[8],
-                $datos[9], $_SESSION['id_asegurado']);
+            $stmt->bind_param('ssiissii', $datos[1], $datos[2], $datos[3], $datos[4], $datos[5], $datos[6],
+                $datos[7], $datos[0]);
             if($stmt->execute()){
                 return true;
-                unset($_SESSION['id_asegurado']);
             } else {
-                unset( $_SESSION['id_asegurado']);
                 return false;
             }
         } catch(mysqli_sql_exception $e) {

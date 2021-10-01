@@ -40,6 +40,7 @@
 
         function actualizarAsegurado(){
             $aseguradoActualizado = array(
+                $_POST['dni'],
                 $_POST['direccion'], 
                 $_POST['localidad'], 
                 (int)$_POST['cp'], 

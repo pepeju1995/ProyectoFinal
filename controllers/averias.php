@@ -10,6 +10,7 @@ class Averias extends Controller{
         if(isset($_SESSION['user'])){
             parent::__construct();
             $this->view->averias = [];
+            $this->view->asegurado = "";
         } else {
             header('Location: '. constant('URL'). 'login');
         }
@@ -21,7 +22,7 @@ class Averias extends Controller{
 
     function crearAveria(){
         $nuevaAveria = array(
-            $_SESSION['user'],
+            $_POST['asegurado'],
             $_POST['descripcion']
         );
         if($this->model->insert($nuevaAveria)){
@@ -31,10 +32,15 @@ class Averias extends Controller{
         }
     }
 
+    function nuevaAveria($asegurado){
+        $this->view->asegurado = $asegurado[0];
+        $this->render();
+    }
+
     function verAverias(){
         $averias = [];
         if($_SESSION['user'] != 'admin'){
-            $averias = $this->model->getByAsegurado();
+            $averias = $this->model->getByAsegurado($_POST['asegurado']);
             $this->view->averias = $averias;
         } else {
             $averias = $this->model->get();
