@@ -22,10 +22,8 @@ class Averias extends Controller{
     function crearAveria(){
         $nuevaAveria = array(
             $_SESSION['user'],
-            (int)$_SESSION['id_asegurado'],
             $_POST['descripcion']
         );
-
         if($this->model->insert($nuevaAveria)){
             $this->verAverias();
         } else {

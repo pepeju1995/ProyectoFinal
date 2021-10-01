@@ -6,6 +6,7 @@
             if(isset($_SESSION['user'])){
                 parent::__construct();
                 $this->view->asegurados = [];
+                $this->view->mensaje = "";
             } else {
                 header('Location: '. constant('URL'). 'login');
             }
@@ -18,6 +19,7 @@
 
         function crearAsegurado(){
             $nuevoAsegurado = array(
+                $_POST['dni'],
                 $_POST['nombre'],
                 $_POST['apellido'],
                 $_POST['direccion'],
@@ -38,7 +40,6 @@
 
         function actualizarAsegurado(){
             $aseguradoActualizado = array(
-                (int)$_POST['id'],
                 $_POST['direccion'], 
                 $_POST['localidad'], 
                 (int)$_POST['cp'], 
@@ -75,7 +76,12 @@
         }
 
         function eliminarAsegurado($id){
-
+            if($this->model->drop($id[0])){
+                $this->view->mensaje = "elemento eliminado";
+            } else{
+                echo "Imposible borrar el elemento";
+            }
+            $this->verAsegurados();
         }
     }
 ?>

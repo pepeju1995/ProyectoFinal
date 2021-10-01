@@ -24,13 +24,15 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>CIF</th>
+                        <th>Apellido</th>
                         <th>Direccion</th>
                         <th>Localidad</th>
                         <th>CP</th>
                         <th>Telefono</th>
-                        <th>Email</th>
-                        <th>Contacto</th>
+                        <th>Direccion</th>
+                        <th>Localidad</th>
+                        <th>CP</th>
+                        <th>Aseguradora</th>
                     </tr>
                 </thead>
 
@@ -52,12 +54,18 @@
                         <td><?php echo $asegurado->localidad_rep; ?></td>
                         <td><?php echo $asegurado->cp_rep; ?></td>
                         <td><?php echo $asegurado->aseguradora; ?></td>
-                        <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">HOLA</a></td>
-                        <td><a href="<?php echo constant('URL'); ?>averias/"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>CREAR AVERIA</a></td>
+                        <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
+                        <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>Editar</a></td>
+                        <td><a href="<?php echo constant('URL'); ?>averias/"><?php $_SESSION['id_asegurado'] = $asegurado->id; ?>Nueva Averia</a></td>
+                        <td><a href="<?php echo constant('URL')?>asegurados/eliminarAsegurado/<?php echo $asegurado->id?>">Eliminar</a></td>
+                        <?php } ?>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
+            <?php if($_SESSION['user'] != 'admin'){?>
+            <button><a href="<?php echo constant('URL')?>asegurados">Nuevo Asegurado</a></button>
+            <?php } ?>
         </div>
 
         <?php require 'views/footer.php'?>

@@ -23,14 +23,10 @@
             <table class="centrar tabla">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>CIF</th>
-                        <th>Direccion</th>
-                        <th>Localidad</th>
-                        <th>CP</th>
-                        <th>Telefono</th>
-                        <th>Email</th>
-                        <th>Contacto</th>
+                        <th>Aseguradora</th>
+                        <th>Asegurado</th>
+                        <th>Fecha</th>
+                        <th>Descripcion</th>                        
                     </tr>
                 </thead>
 
