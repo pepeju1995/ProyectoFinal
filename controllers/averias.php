@@ -11,6 +11,7 @@ class Averias extends Controller{
             parent::__construct();
             $this->view->averias = [];
             $this->view->asegurado = "";
+            $this->view->mensaje = "";
         } else {
             header('Location: '. constant('URL'). 'login');
         }
@@ -26,9 +27,10 @@ class Averias extends Controller{
             $_POST['descripcion']
         );
         if($this->model->insert($nuevaAveria)){
+            $this->view->mensaje = "Nueva averia añadida.";
             $this->verAverias();
         } else {
-            echo "No puede crearse la averia";
+            $this->view->mensaje = "No puede crearse la averia";
         }
     }
 
@@ -51,18 +53,6 @@ class Averias extends Controller{
     }
 
     //$averias = $this->model->getByAseguradora($_POST['asegurado']);
-
-    function verAveria($id){
-
-    }
-
-    function modificarAveria(){
-
-    }
-
-    function eliminarAveria($id){
-
-    }
 }
 
 ?>

@@ -32,9 +32,10 @@
                 $_SESSION['user']
             );
             if($this->model->insert($nuevoAsegurado)){
+                $this->view->mensaje = "Nuevo Asegurado creado";
                 $this->verAsegurados();
             } else {
-                echo "No se ha podido crear el asegurado";
+                $this->view->mensaje = "No se ha podido crear el asegurado";
             }
         }
 
@@ -51,9 +52,9 @@
             );
 
             if($this->model->update($aseguradoActualizado)){
-                echo "Actualizado con exito";
+                $this->view->mensaje =  "Actualizado con exito";
             } else {
-                echo  "No se pudo actualizar";
+                $this->view->mensaje =   "No se pudo actualizar";
             }
         }
 
@@ -80,7 +81,7 @@
             if($this->model->drop($id[0])){
                 $this->view->mensaje = "elemento eliminado";
             } else{
-                echo "Imposible borrar el elemento";
+                $this->view->mensaje =  "Imposible borrar el elemento";
             }
             $this->verAsegurados();
         }
