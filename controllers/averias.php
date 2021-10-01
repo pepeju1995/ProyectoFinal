@@ -3,7 +3,10 @@
 class Averias extends Controller{
 
     function __construct(){
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
         if(isset($_SESSION['user'])){
             parent::__construct();
             $this->view->averias = [];
@@ -31,8 +34,15 @@ class Averias extends Controller{
     }
 
     function verAverias(){
-        $averias = $this->model->get();
-        $this->view->averias = $averias;
+        $averias = [];
+        if($_SESSION['user'] != 'admin'){
+            $averias = $this->model->getByAsegurado();
+            $this->view->averias = $averias;
+        } else {
+            $averias = $this->model->get();
+            $this->view->averias = $averias;
+        }
+        
         $this->render('verTodas');
     }
 

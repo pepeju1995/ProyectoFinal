@@ -26,9 +26,9 @@
 
                     <li><a href="<?php echo constant('URL'); ?>aseguradoras/verAseguradoras">Aseguradora</a></li>
 
-                    <li><a href="<?php echo constant('URL'); ?>asegurados">Asegurado</a></li>
+                    <li><a href="<?php echo constant('URL'); ?>asegurados/verAsegurados">Asegurado</a></li>
 
-                    <li><a href="<?php echo constant('URL'); ?>averias">Averias</a></li>
+                    <li><a href="<?php echo constant('URL'); ?>averias/verAverias">Averias</a></li>
                 </ul>
             </div>
         </header>

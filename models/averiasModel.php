@@ -35,6 +35,23 @@ class AveriasModel extends Model{
             return false;
         }
     }
+
+    function getByAsegurado(){
+        $averias = [];
+        $asegurado = $_SESSION['id_asegurado'];
+        try{
+            $query = $this->db->connect()->query("SELECT * FROM averias WHERE asegurado = '$asegurado'");
+
+            while($row = $query->fetch_row()){
+                $item = new Averia();
+                $item->crearAveria($row);
+                array_push($averias, $item);
+            }
+            return $averias;
+        } catch(mysqli_sql_exception $e){
+            return false;
+        }
+    }
 }
 
 ?>
