@@ -40,7 +40,7 @@ class Averias extends Controller{
     function verAverias(){
         $averias = [];
         if($_SESSION['user'] != 'admin'){
-            $averias = $this->model->getByAsegurado($_POST['asegurado']);
+            $averias = $this->model->getByAseguradora();
             $this->view->averias = $averias;
         } else {
             $averias = $this->model->get();
@@ -49,6 +49,8 @@ class Averias extends Controller{
         
         $this->render('verTodas');
     }
+
+    //$averias = $this->model->getByAseguradora($_POST['asegurado']);
 
     function verAveria($id){
 
