@@ -15,12 +15,11 @@
 
         <div class="contenedor">
             <form action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">
-            
-                <input type="text" name="usuario" placeholder="Usuario (CIF)">
+                <input type="text" name="usuario" placeholder="Usuario">
                                 
                 <input type="password" name="contraseña" placeholder="Contraseña">
                                 
-                <button type="submit">Enviar</button>
+                <button type="submit">Iniciar Sesion</button>
             </form>
         </div>
 
