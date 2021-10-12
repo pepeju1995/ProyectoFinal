@@ -9,12 +9,7 @@
     </head>
 
     <body>
-        <div class="cont-encabezado">
-            <div class="encabezado">
-                <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logo" class="logo">
-                <h1>Bienvenido a Soluciones Integrales</h1> 
-            </div>
-        </div>
+        <?php require_once 'views/header.php'?>
 
         <div class="contenedor">
             <form action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">

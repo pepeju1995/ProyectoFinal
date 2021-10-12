@@ -3,7 +3,6 @@ class Aseguradoras extends Controller {
 
     function __construct()
     {
-        session_start();
         if(isset($_SESSION['user'])){
             parent::__construct();
             $this->view->aseguradoras = [];

@@ -3,23 +3,33 @@ body{
     padding: 0;
 }
 
-.cont-encabezado {
-    background-color: cornflowerblue;
-    overflow: hidden;
+a {
+  text-decoration: none;  
+  color: chartreuse;
 }
 
-.encabezado {
-    width: 700px;
+header {
+    background-color: brown;
+}
+
+.logout {
+    padding: 5px;
+    display: inline-block;
+}
+
+.logout:hover {
+    background-color: chocolate;
+}
+
+.titulo{
     margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    
+    padding: 50px 0;
+    width: 700px;
+    text-align: center;
 }
 
-.encabezado h1 {
-    margin: 0;
+.titulo h1 {
+    display: inline;
 }
 
 .logo {
@@ -27,9 +37,22 @@ body{
     height: 200px;
 }
 
-.header{
+.nav {
+    list-style: none;
+    width: 600px;
+    padding: 0;
     margin: 0 auto;
     text-align: center;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.nav li:hover {
+    background-color: chocolate;
 }
 
 .contenedor{
