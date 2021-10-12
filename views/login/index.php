@@ -9,8 +9,11 @@
     </head>
 
     <body>
-        <div class="header">
-            Bienvenido a Soluciones Integrales.
+        <div class="cont-encabezado">
+            <div class="encabezado">
+                <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logo" class="logo">
+                <h1>Bienvenido a Soluciones Integrales</h1> 
+            </div>
         </div>
 
         <div class="contenedor">
