@@ -59,7 +59,7 @@
                 </tbody>
             </table>
             <?php if($_SESSION['user'] == 'admin'){?>
-            <button><a href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a></button>
+            <button class="btn"><a href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a></button>
             <?php } ?>
         </div>
 

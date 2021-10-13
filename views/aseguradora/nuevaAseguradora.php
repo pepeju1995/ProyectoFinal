@@ -19,38 +19,27 @@
             </div>
             <?php } ?>
 
-            <div class="centrar formulario">
-                <form action="<?php echo constant('URL'); ?>aseguradoras/crearAseguradora" method="post">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" placeholder="Nombre de empresa"  required>
+            <form action="<?php echo constant('URL'); ?>aseguradoras/crearAseguradora" method="post">
+                    <input type="text" name="nombre" placeholder="Nombre de empresa"  required>
+                    
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    
+                    <input type="text" name="cif" placeholder="CIF" required>
+                    
+                    <input type="text" name="direccion" placeholder="Direccion" required>
+                    
+                    <input type="text" name="localidad" placeholder="Localidad" required>
+                    
+                    <input type="text" name="codigopostal" placeholder="CP" required>
+                    
+                    <input type="tel" name="telefono" placeholder="Telefono" required>
                         
-                        <label for="contraseña">Contraseña</label>
-                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    <input type="email" name="email" placeholder="test@test.com" required>
                         
-                        <label for="cif">CIF</label>
-                        <input type="text" name="cif" placeholder="CIF" required>
+                    <input type="text" name="contacto" placeholder="Persona de contacto" required>
                         
-                        <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion" placeholder="Direccion" required>
-                        
-                        <label for="localidad">Localidad</label>
-                        <input type="text" name="localidad" placeholder="Localidad" required>
-                        
-                        <label for="codigopostal">Codigo Postal</label>
-                        <input type="text" name="codigopostal" placeholder="CP" required>
-                        
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" name="telefono" placeholder="Telefono" required>
-                            
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="test@test.com" required>
-                            
-                        <label for="contacto">Contacto</label>
-                        <input type="text" name="contacto" placeholder="Persona de contacto" required>
-                            
-                        <input type="submit" value="Registrar aseguradora" class="btn">
-                </form>
-            </div>
+                    <button type="submit">Registrar aseguradora</button>
+            </form>
         </div>
         <?php require_once 'views/footer.php'?>
     </body>

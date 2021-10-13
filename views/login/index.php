@@ -12,6 +12,7 @@
         <?php require_once 'views/header.php'?>
 
         <div class="contenedor">
+            <h1>Inicio de sesión</h1>
             <form action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">
                 <input type="text" name="usuario" placeholder="Usuario">
                                 
