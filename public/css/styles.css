@@ -3,11 +3,43 @@
     padding: 0;
 }
 
+<<<<<<< HEAD
 .header{
     margin: 50px auto;
     text-align: center;
 }
 
+=======
+.cont-encabezado {
+    background-color: cornflowerblue;
+    overflow: hidden;
+}
+
+.encabezado {
+    width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.encabezado h1 {
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.header{
+    margin: 0 auto;
+    text-align: center;
+}
+
+>>>>>>> parent of d01713e (debuggin login and style)
 .contenedor{
     height: 500px;
     margin: 20px auto;
