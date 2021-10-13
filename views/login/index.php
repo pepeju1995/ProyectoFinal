@@ -9,16 +9,8 @@
     </head>
 
     <body>
-<<<<<<< HEAD
         <div class="header">
             Bienvenido a Soluciones Integrales.
-=======
-        <div class="cont-encabezado">
-            <div class="encabezado">
-                <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logo" class="logo">
-                <h1>Bienvenido a Soluciones Integrales</h1> 
-            </div>
->>>>>>> parent of d01713e (debuggin login and style)
         </div>
 
         <div class="contenedor">
