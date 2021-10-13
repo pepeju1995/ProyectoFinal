@@ -9,21 +9,15 @@
     </head>
 
     <body>
-        <div class="header">
-            Bienvenido a Soluciones Integrales.
-        </div>
+        <?php require_once 'views/header.php'?>
 
         <div class="contenedor">
             <form action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">
-                <fieldset>
-                    <input type="text" name="usuario" placeholder="Usuario (CIF)">
-                </fieldset>
-                <fieldset>            
-                    <input type="password" name="contraseña" placeholder="Contraseña">
-                </fieldset>   
-                <fieldset>
-                    <button type="submit">Enviar</button>
-                </fieldset>
+                <input type="text" name="usuario" placeholder="Usuario">
+                                
+                <input type="password" name="contraseña" placeholder="Contraseña">
+                                
+                <button type="submit">Iniciar Sesion</button>
             </form>
         </div>
 

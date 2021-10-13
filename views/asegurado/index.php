@@ -11,7 +11,7 @@
     <body>
         <?php require_once 'views/header.php'?>
         <div class="contenedor">
-            <h1>Aseguradoras</h1>
+            <h1>Nuevo Asegurado</h1>
 
             <?php if($this->mensaje != ""){ ?>
             <div>

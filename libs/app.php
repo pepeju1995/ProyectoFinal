@@ -4,16 +4,32 @@ require_once 'controllers/errores.php';
 class App{
     function __construct()
     {
+        session_start();
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
 
         if(empty($url[0])){
-            $archivoController = 'controllers/login.php';    
-            require_once $archivoController;
-            $controller = new Login();
-            $controller->loadModel('login');
-            $controller->render();
+            if(!isset($_SESSION['user'])){
+                $archivoController = 'controllers/login.php';    
+                require_once $archivoController;
+                $controller = new Login();
+                $controller->loadModel('login');
+                $controller->render();
+            } elseif ($_SESSION['user'] == 'admin') {
+                $archivoController = 'controllers/aseguradoras.php';
+                require_once $archivoController;
+                $controller = new Aseguradoras();
+                $controller->loadModel('aseguradoras');
+                $controller->{'verAseguradoras'}();
+            } else {
+                $archivoController = 'controllers/asegurados.php';
+                require_once $archivoController;
+                $controller = new Asegurados();
+                $controller->loadModel('asegurados');
+                $controller->{'verAsegurados'}();
+            }
+            
             return false;
         }
         
