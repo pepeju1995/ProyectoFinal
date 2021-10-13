@@ -7,11 +7,11 @@ html, body{
 
 a {
   text-decoration: none;  
-  color: chartreuse;
+  color: #F2C572;
 }
 
 header {
-    background-color: brown;
+    background-color: #59462E;
 }
 
 .logout {
@@ -21,7 +21,7 @@ header {
 }
 
 .logout:hover {
-    background-color: chocolate;
+    background-color: #A67449;
 }
 
 .titulo{
@@ -33,6 +33,7 @@ header {
 
 .titulo h1 {
     display: inline;
+    color: #D9BC9A;
 }
 
 .logo {
@@ -55,13 +56,14 @@ header {
 }
 
 .nav li:hover {
-    background-color: chocolate;
+    background-color: #A67449;
 }
 
 .contenedor{
     display: flex;
     justify-content: center;
-    min-height: calc(100% - 15vh - 300px);
+    min-height: calc(100% - 15vh - 290px);
+    background-color: #E38109;
 }
 
 .contenedor form{
@@ -70,6 +72,10 @@ header {
     justify-content: center;
     flex-direction: column;
     row-gap: 20px;
+}
+
+.contenedor form label {
+    color: #FF8E24;
 }
 
 .contenedor form input{
@@ -93,4 +99,9 @@ header {
 
 .footer {
     height: 15vh;
+    background-color: #59462E;
+}
+
+.footer p {
+    color: #F2C572;
 }
