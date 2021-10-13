@@ -1,3 +1,3 @@
-<div id="footer">
+<div class="footer">
     Jose Juan Copyright 2021
 </div>
