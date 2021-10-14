@@ -18,40 +18,29 @@
                 <p class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
             <?php } ?>
+            <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
+                <input type="text" name="dni" placeholder="DNI">
+            
+                <input type="text" name="nombre" placeholder="Nombre">
+            
+                <input type="text" name="apellido" placeholder="Apellidos">
+            
+                <input type="text" name="direccion" placeholder="Direccion">
+            
+                <input type="text" name="localidad" placeholder="Localidad">
+            
+                <input type="text" name="cp" placeholder="CP">
+            
+                <input type="tel" name="telefono" placeholder="Telefono">
+            
+                <input type="text" name="direccion_rep" placeholder="Direccion de la reparacion">
 
-            <div class="centrar formulario">
-                <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
-                    <fieldset>
-                        <input type="text" name="dni" placeholder="DNI">
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="nombre" placeholder="Nombre">
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="apellido" placeholder="Apellidos">
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="direccion" placeholder="Direccion">
-                    </fieldset> 
-                    <fieldset>
-                        <input type="text" name="localidad" placeholder="Localidad">
-                    </fieldset>   
-                    <fieldset>
-                        <input type="text" name="cp" placeholder="CP">
-                    </fieldset>
-                    <fieldset>
-                        <input type="tel" name="telefono" placeholder="Telefono">
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="direccion_rep" placeholder="Direccion de la reparacion">
-                        <input type="text" name="localidad_rep" placeholder="Localidad de la reparacion">
-                        <input type="text" name="cp_rep" placeholder="CP de la reparacion">
-                    </fieldset>
-                    <fieldset>
-                        <input type="submit" value="Crear asegurado">
-                    </fieldset>                    
-                </form>
-            </div>
+                <input type="text" name="localidad_rep" placeholder="Localidad de la reparacion">
+
+                <input type="text" name="cp_rep" placeholder="CP de la reparacion">
+            
+                <input type="submit" value="Crear asegurado">
+            </form>
         </div>
         <?php require_once 'views/footer.php'?>
     </body>
