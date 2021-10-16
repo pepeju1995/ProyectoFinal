@@ -14,21 +14,22 @@
             <?php require 'views/header.php'?>
             
             <?php if($this->mensaje != ""){ ?>
-            <div>
+            <div class="row">
                 <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
             <?php } ?>
-                <table class="table">
+            <div class="table-responsive">
+                <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">CIF</th>
-                            <th scope="col">Direccion</th>
-                            <th scope="col">Localidad</th>
-                            <th scope="col">CP</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Contacto</th>
+                            <th>Nombre</th>
+                            <th>CIF</th>
+                            <th>Direccion</th>
+                            <th>Localidad</th>
+                            <th>CP</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
+                            <th>Contacto</th>
                         </tr>
                     </thead>
 
@@ -39,7 +40,7 @@
                                 $aseguradora = new Aseguradora();
                                 $aseguradora = $row;
                         ?>
-                            <tr id="fila-<?php echo $aseguradora->cif; ?>" class="filas">
+                            <tr id="fila-<?php echo $aseguradora->cif; ?>">
                                 <td><?php echo $aseguradora->nombre; ?></td>
                                 <td><?php echo $aseguradora->cif; ?></td>
                                 <td><?php echo $aseguradora->direccion; ?></td>
@@ -49,15 +50,18 @@
                                 <td><?php echo $aseguradora->email; ?></td>
                                 <td><?php echo $aseguradora->contacto; ?></td>
                                 <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
-                                <td> <a href="<?php echo constant('URL') . 'aseguradoras/verAseguradora/'. $aseguradora->cif; ?> ">Editar</a> </td>
-                                <td><button class="bEliminar" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
+                                <td> <a class="btn btn-primary" href="<?php echo constant('URL') . 'aseguradoras/verAseguradora/'. $aseguradora->cif; ?> ">Editar</a> </td>
+                                <td><button class="btn btn-primary" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
                                 <?php }?>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
+            </div>
                 <?php if($_SESSION['user'] == 'admin'){?>
-                <button class="btn"><a href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a></button>
+                    <div class="row justify-content-center">
+                        <a class="col-4 btn btn-secondary" href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a>
+                    </div>
                 <?php } ?>
 
             <?php require 'views/footer.php'?>
