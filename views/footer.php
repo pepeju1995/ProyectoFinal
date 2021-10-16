@@ -1,3 +1,3 @@
-<div class="footer">
-    <p>Jose Juan Copyright 2021</p>
+<div class="row">
+    <p class="col">Jose Juan Copyright 2021</p>
 </div>

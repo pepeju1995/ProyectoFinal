@@ -1,20 +1,18 @@
-<header>
+<div class="row">
     <?php if(isset($_SESSION['user'])){?>
-    <div class="logout">
-        <a href="<?php echo constant('URL'); ?>login/cerrarSesion">LogOut</a>
-    </div>
+        <div class="col-12">
+            <a href="<?php echo constant('URL'); ?>login/cerrarSesion">LogOut</a>
+        </div>
     <?php }?>
-    <div class="titulo">
-        <img align="middle" class="logo" src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logotipo" class="logo">
-        <h1>Soluciones Integrales S.L.</h1>
-    </div>
+</div>
+<div class="row justify-content-center">
+    <img class="col-4" src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logotipo">
+    <h1 class="col-6 align-self-center">Soluciones Integrales S.L.</h1>
+</div>
+<div class="row justify-content-center">
     <?php if(isset($_SESSION['user'])){?>
-        <ul class="nav">
-            <li><a href="<?php echo constant('URL'); ?>aseguradoras/verAseguradoras">Aseguradora</a></li>
-
-            <li><a href="<?php echo constant('URL'); ?>asegurados/verAsegurados">Asegurado</a></li>
-
-            <li><a href="<?php echo constant('URL'); ?>averias/verAverias">Averias</a></li>
-        </ul>
+        <a class="col-3" href="<?php echo constant('URL'); ?>aseguradoras/verAseguradoras">Aseguradora</a>
+        <a class="col-3" href="<?php echo constant('URL'); ?>asegurados/verAsegurados">Asegurado</a>
+        <a class="col-3" href="<?php echo constant('URL'); ?>averias/verAverias">Averias</a>
     <?php }?>
-</header>
+</div>
