@@ -18,18 +18,17 @@
                 <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
             <?php } ?>
-            <div class="row">
-                <table class="centrar tabla">
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>CIF</th>
-                            <th>Direccion</th>
-                            <th>Localidad</th>
-                            <th>CP</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                            <th>Contacto</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">CIF</th>
+                            <th scope="col">Direccion</th>
+                            <th scope="col">Localidad</th>
+                            <th scope="col">CP</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contacto</th>
                         </tr>
                     </thead>
 
@@ -60,7 +59,6 @@
                 <?php if($_SESSION['user'] == 'admin'){?>
                 <button class="btn"><a href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a></button>
                 <?php } ?>
-            </div>
 
             <?php require 'views/footer.php'?>
         </div>
