@@ -79,7 +79,7 @@ class AseguradorasModel extends Model{
 
     public function drop($id){
         $query = $this->db->connect();
-        $stmt = $query->prepare("DELETE FROM aseguradoras WHERE cif = ?");
+        $stmt = $query->prepare("DELETE FROM aseguradoras WHERE CIF = ?");
         try{
             $stmt->bind_param('s', $id);
             $stmt->execute();

@@ -13,11 +13,12 @@
         <div class=".container">
             <?php require 'views/header.php'?>
             
-            <?php if($this->mensaje != ""){ ?>
-            <div class="row">
-                <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
+
+                </div>
             </div>
-            <?php } ?>
+            
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -51,7 +52,7 @@
                                 <td><?php echo $aseguradora->contacto; ?></td>
                                 <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
                                 <td> <a class="btn btn-primary" href="<?php echo constant('URL') . 'aseguradoras/verAseguradora/'. $aseguradora->cif; ?> ">Editar</a> </td>
-                                <td><button class="btn btn-primary" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
+                                <td><button id="bEliminar" class="btn btn-primary" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
                                 <?php }?>
                             </tr>
                         <?php } ?>
