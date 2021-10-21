@@ -58,8 +58,9 @@ class Aseguradoras extends Controller {
     }
 
     function actualizarAseguradora(){
+        var_dump($_REQUEST);
         $newAseguradora = array(
-            $_POST['nombre'],
+            $_POST[0],
             $_SESSION['user'],
             $_POST['direccion'],
             $_POST['localidad'],
@@ -68,6 +69,7 @@ class Aseguradoras extends Controller {
             $_POST['email'],
             $_POST['contacto']
         );
+        var_dump($newAseguradora);
 
         if($this->model->update($newAseguradora)){
             $aseguradora = new Aseguradora();

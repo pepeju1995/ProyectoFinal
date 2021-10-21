@@ -21,7 +21,7 @@
                 </div>
             </div>
             
-            <form action="<?php echo constant('URL'); ?>aseguradoras/actualizarAseguradora" method="post">
+            <form id="actualizar-aseguradora" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" value="<?php echo $this->aseguradora->nombre; ?>" >
                     
@@ -46,7 +46,7 @@
                     <label for="contacto">Contacto</label>
                     <input type="text" name="contacto" value="<?php echo $this->aseguradora->contacto; ?>" >
                         
-                    <input id="bActualizar" type="button" value="Actualizar" class="btn">
+                    <input id="bActualizar" type="button" value="Actualizar" class="btn" onclick="actualizar();">
             </form>
         
             <?php require_once 'views/footer.php'?>
