@@ -1,7 +1,9 @@
 
-const botones = document.querySelectorAll("#bEliminar");
+const bEliminar = document.querySelectorAll("#bEliminar");
+const bEditar = document.querySelectorAll("#bEditar");
+const bActualizar = document.querySelectorAll("#bActualizar");
 
-botones.forEach(boton => {
+bEliminar.forEach(boton => {
     boton.addEventListener("click", () => {
         const id = boton.dataset.cif;
         const confirm = window.confirm("Estas seguro de eliminar al alumno " + id + "?")
@@ -18,15 +20,33 @@ botones.forEach(boton => {
     })
 })
 
+bEditar.forEach(boton => {
+    boton.addEventListener("click", () => {
+        const id = boton.dataset.cif;
+
+        httpRequest("http://localhost/ProyectoFinal/aseguradoras/verAseguradora/" + id, function(e){
+            window.location.href = e.responseURL;    
+        })
+    })
+})
+
+bActualizar.forEach(boton => {
+    boton.addEventListener("click", () => {
+        httpRequest("http://localhost/ProyectoFinal/aseguradoras/actualizarAseguradora", function(e){
+            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-info" role="alert">Aseguradora actualizada correctamente</p>';    
+        })
+    })
+})
+
+
 function httpRequest(url, callback){
     const http = new XMLHttpRequest();
-    http.open("DELETE", url);
+    http.open("GET", url);
     http.send();
-    console.log(http);
     http.onreadystatechange = () => {
         if(http.readyState == 4 && http.status == 200){
             console.log(callback);
-            callback.apply(http);
+            callback(http);
         }
     }
 }

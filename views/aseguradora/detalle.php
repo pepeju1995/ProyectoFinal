@@ -4,20 +4,23 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/styles.css">
+        <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
         <title>Document</title>
     </head>
 
     <body>
-        <?php require_once 'views/header.php'?>
-        <div class="contenedor">
+        <div class="container">
+            <?php require_once 'views/header.php'?>
+        
             <h1>Informacion de <?php echo $this->aseguradora->nombre; ?></h1>
             
-            <?php if($this->mensaje != ""){ ?>
-            <div>
-                <p class="mensaje"><?php echo $this->mensaje; ?></p>
+            
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
+
+                </div>
             </div>
-            <?php } ?>
+            
             <form action="<?php echo constant('URL'); ?>aseguradoras/actualizarAseguradora" method="post">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" value="<?php echo $this->aseguradora->nombre; ?>" >
@@ -43,9 +46,12 @@
                     <label for="contacto">Contacto</label>
                     <input type="text" name="contacto" value="<?php echo $this->aseguradora->contacto; ?>" >
                         
-                    <input type="submit" value="Actualizar" class="btn">
+                    <input id="bActualizar" type="button" value="Actualizar" class="btn">
             </form>
+        
+            <?php require_once 'views/footer.php'?>
+
+            <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
         </div>
-        <?php require_once 'views/footer.php'?>
     </body>
 </html>
