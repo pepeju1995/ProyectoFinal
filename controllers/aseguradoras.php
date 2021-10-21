@@ -83,7 +83,7 @@ class Aseguradoras extends Controller {
 
     function eliminarAseguradora($param = null){
         $id = $param[0];
-
+        
         if($this->model->drop($id)){
             $mensaje = "Elemento eliminado";
         } else {

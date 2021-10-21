@@ -17,6 +17,8 @@ function validarFormulario (evento) {
 
     let pass = document.getElementById('contraseña').value;
     let pass_rep = document.getElementById('contraseña-rep').value;
+    console.log(pass);
+    console.log(pass_rep);
     if(pass !== pass_rep){
         alert('Las contraseñas no coinciden')
         return;

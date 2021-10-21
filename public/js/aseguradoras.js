@@ -25,6 +25,7 @@ function httpRequest(url, callback){
     console.log(http);
     http.onreadystatechange = () => {
         if(http.readyState == 4 && http.status == 200){
+            console.log(callback);
             callback.apply(http);
         }
     }
