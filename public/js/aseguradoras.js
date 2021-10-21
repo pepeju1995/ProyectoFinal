@@ -33,6 +33,7 @@ function httpRequest(url, callback){
     const http = new XMLHttpRequest();
     http.open("GET", url);
     http.send();
+    console.log(http)
     http.onreadystatechange = () => {
         if(http.readyState == 4 && http.status == 200){
             console.log(callback);
@@ -48,16 +49,17 @@ function actualizar(){
 }
 
 function obtenerDatos(){
-    let data = [];
-    data.push(document.getElementsByName('nombre')[0].value);
-    data.push(document.getElementsByName('direccion')[0].value);
-    data.push(document.getElementsByName('localidad')[0].value);
-    data.push(document.getElementsByName('codigopostal')[0].value);
-    data.push(document.getElementsByName('telefono')[0].value);
-    data.push(document.getElementsByName('email')[0].value);
-    data.push(document.getElementsByName('contacto')[0].value);
-    console.log(data);
-    return data;
+    var formData = new FormData();
+
+    formData.append("nombre", document.getElementsByName('nombre')[0].value);
+    formData.append("cif", document.getElementsByName('cif')[0].value);
+    formData.append("direccion", document.getElementsByName('direccion')[0].value);
+    formData.append("localidad", document.getElementsByName('localidad')[0].value);
+    formData.append("codigopostal", document.getElementsByName('codigopostal')[0].value);
+    formData.append("telefono", document.getElementsByName('telefono')[0].value);
+    formData.append("email", document.getElementsByName('email')[0].value);
+    formData.append("contacto", document.getElementsByName('contacto')[0].value);
+    return formData;
 }
 
 function enviarFormulario(){
@@ -67,7 +69,8 @@ function enviarFormulario(){
     console.log(http);
     http.onreadystatechange = () => {
         if(http.readyState === 4 && http.status === 200){
-            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-info" role="alert">Aseguradora actualizada correctamente</p>'
+            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-info" role="alert">Aseguradora actualizada correctamente</p>';
         }
     }
+    
 }

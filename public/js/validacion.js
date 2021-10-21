@@ -1,5 +1,65 @@
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+    empresa: /^[a-zA-Z\_\-]{4,40}$/,
+    cif: /^[0-9]{8}$[a-zA-Z]{1}$/,
+    password: /^.{4,12}$/,
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombre":
+            if(expresiones.nombre.test(e.target.value)){
+
+            } else {
+                document.get
+            }
+        break;
+
+        case "contraseña":
+
+            break;
+        case "contraseña-rep":
+
+            break;
+        case "cif":
+
+            break;
+        case "direccion":
+
+            break;
+        case "localidad":
+
+            break;
+        case "codigopostal":
+
+            break;
+        case "telefono":
+
+            break;
+        case "email":
+
+            break;
+        case "contacto":
+
+            break;
+    }
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+})
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+
+/*
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("formulario").addEventListener('submit', validarFormulario);
+    document.getElementById("formulario").addEventListener('change', validarFormulario);
 })
 
 function validarFormulario (evento) {
@@ -45,4 +105,4 @@ function validarFormulario (evento) {
         return;
     }
     this.submit();
-}
+}*/
