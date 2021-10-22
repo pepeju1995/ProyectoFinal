@@ -34,8 +34,8 @@
                     <label for="localidad">Localidad</label>
                     <input type="text" name="localidad" value="<?php echo $this->aseguradora->localidad; ?>" >
                     
-                    <label for="codigopostal">Codigo Postal</label>
-                    <input type="text" name="codigopostal" value="<?php echo $this->aseguradora->cp; ?>" >
+                    <label for="cp">Codigo Postal</label>
+                    <input type="text" name="cp" value="<?php echo $this->aseguradora->cp; ?>" >
                     
                     <label for="telefono">Telefono</label>
                     <input type="tel" name="telefono" value="<?php echo $this->aseguradora->telefono; ?>" >

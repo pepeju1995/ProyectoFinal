@@ -55,7 +55,7 @@ function obtenerDatos(){
     formData.append("cif", document.getElementsByName('cif')[0].value);
     formData.append("direccion", document.getElementsByName('direccion')[0].value);
     formData.append("localidad", document.getElementsByName('localidad')[0].value);
-    formData.append("codigopostal", document.getElementsByName('codigopostal')[0].value);
+    formData.append("cp", document.getElementsByName('cp')[0].value);
     formData.append("telefono", document.getElementsByName('telefono')[0].value);
     formData.append("email", document.getElementsByName('email')[0].value);
     formData.append("contacto", document.getElementsByName('contacto')[0].value);

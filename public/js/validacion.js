@@ -7,6 +7,10 @@ const expresiones = {
     password: /^.{4,12}$/,
 }
 
+const validarCampo = () => {
+    
+}
+
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombre":
