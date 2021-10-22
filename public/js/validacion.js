@@ -2,23 +2,27 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-    empresa: /^[a-zA-Z\_\-]{4,40}$/,
+    empresa: /^[a-zA-Z0-9 ]{4,40}$/,
     cif: /^[0-9]{8}$[a-zA-Z]{1}$/,
     password: /^.{4,12}$/,
 }
 
-const validarCampo = () => {
-    
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test(input.value)){
+        document.getElementById(campo).classList.remove('is-invalid');
+        document.getElementById(campo).classList.add('is-valid');
+        document.getElementById(`${campo}-valido`).classList.add('ocultar-requisitos');
+    } else {
+        document.getElementById(campo).classList.remove('is-valid');
+        document.getElementById(campo).classList.add('is-invalid');
+        document.getElementById(`${campo}-valido`).classList.remove('ocultar-requisitos');
+    }
 }
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombre":
-            if(expresiones.nombre.test(e.target.value)){
-
-            } else {
-                document.get
-            }
+            validarCampo(expresiones.empresa, e.target, 'nombre')
         break;
 
         case "contraseña":

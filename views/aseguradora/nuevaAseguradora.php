@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo constant('URL') ?>public/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/estilos.css">
         <title>Document</title>
     </head>
 
@@ -27,8 +28,8 @@
                         <label for="nombre">Nombre</label>
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre de empresa">
-                            <i class="fas fa-clipboard-check"></i>
                         </div>
+                        <p id="nombre-valido" class="form-text ocultar-requisitos">El nombre de empresa debe contener entre 4 y 40 caracteres alfanumericos</p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -36,6 +37,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -43,6 +45,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="password" id="contraseña-rep" name="contraseña-rep" placeholder="Contraseña">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -50,6 +53,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="cif" name="cif" placeholder="CIF">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -57,6 +61,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -64,6 +69,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="localidad" name="localidad" placeholder="Localidad">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -71,6 +77,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="cp" name="codigopostal" placeholder="CP">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -78,6 +85,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -85,6 +93,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="email" id="email" name="email" placeholder="test@test.com">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -92,6 +101,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="contacto" name="contacto" placeholder="Persona de contacto">
                         </div>
+                        <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-5 text-center">
