@@ -2,8 +2,8 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-    empresa: /^[a-zA-Z0-9 ]{4,40}$/,
-    cif: /^[0-9]{8}$[a-zA-Z]{1}$/,
+    aseguradora: /^[a-zA-Z0-9 ]{4,40}$/,
+    cif: /^[0-9]{8}[a-zA-Z]{1}$/,
     password: /^.{4,12}$/,
 }
 
@@ -22,7 +22,7 @@ const validarCampo = (expresion, input, campo) => {
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombre":
-            validarCampo(expresiones.empresa, e.target, 'nombre')
+            validarCampo(expresiones.aseguradora, e.target, 'nombre')
         break;
 
         case "contraseña":
@@ -32,7 +32,7 @@ const validarFormulario = (e) => {
 
             break;
         case "cif":
-
+            validarCampo(expresiones.cif, e.target, 'cif');
             break;
         case "direccion":
 

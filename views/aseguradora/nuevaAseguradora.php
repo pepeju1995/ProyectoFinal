@@ -53,7 +53,7 @@
                         <div class="formulario-input">
                             <input class="form-control" type="text" id="cif" name="cif" placeholder="CIF">
                         </div>
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="cif-valido" class="form-text ocultar-requisitos">Introducir 8 digitos y una letra</p>
                     </div>
 
                     <div class="col-8 mb-3">
