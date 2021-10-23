@@ -33,13 +33,13 @@
                     <div class="col-8 mb-3">
                         <label for="contraseña">Contraseña</label>
                         <input class="form-control" type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="contraseña-valido" class="form-text ocultar-requisitos">La contraseña debe tener entre 4 y 16 caracteres.</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contraseña-rep">Repite la contraseña</label>
                         <input class="form-control" type="password" id="contraseña-rep" name="contraseña-rep" placeholder="Contraseña">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="contraseña-rep-valido" class="form-text ocultar-requisitos">La contraseña no coincide.</p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -51,37 +51,37 @@
                     <div class="col-8 mb-3">
                         <label for="direccion">Direccion</label>
                         <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="direccion-valido" class="form-text ocultar-requisitos">Indicar la calle y el numero separado por una coma (Calle  mayor, 74)</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="localidad">Localidad</label>
                         <input class="form-control" type="text" id="localidad" name="localidad" placeholder="Localidad">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="localidad-valido" class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="cp">Codigo Postal</label>
-                        <input class="form-control" type="text" id="cp" name="codigopostal" placeholder="CP">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <input class="form-control" type="text" id="cp" name="cp" placeholder="CP">
+                        <p id="cp-valido" class="form-text ocultar-requisitos">Codigo postal de 5 digitos</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="telefono">Telefono</label>
                         <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="telefono-valido" class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="email">Email</label>
                         <input class="form-control" type="email" id="email" name="email" placeholder="test@test.com">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="email-valido" class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contacto">Persona de contacto</label>
                         <input class="form-control" type="text" id="contacto" name="contacto" placeholder="Persona de contacto">
-                        <p class="form-text ocultar-requisitos"></p>
+                        <p id="contacto-valido" class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-5 text-center">

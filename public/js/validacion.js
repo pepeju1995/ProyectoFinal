@@ -4,7 +4,9 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
     aseguradora: /^[a-zA-Z0-9 ]{4,40}$/,
     cif: /^[0-9]{8}[a-zA-Z]{1}$/,
-    password: /^.{4,12}$/,
+    password: /^.{4,16}$/,
+    direccion: /^[a-zA-Z ]{4,45}[,]{1}[ 0-9]{2,4}$/,
+    cp: /^[0-9]{5}$/,
 }
 
 const validarCampo = (expresion, input, campo) => {
@@ -22,36 +24,44 @@ const validarCampo = (expresion, input, campo) => {
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombre":
-            validarCampo(expresiones.aseguradora, e.target, 'nombre')
+            validarCampo(expresiones.aseguradora, e.target, 'nombre');
         break;
 
         case "contraseña":
+            validarCampo(expresiones.password, e.target, 'contraseña');
+        break;
 
-            break;
         case "contraseña-rep":
+            validarCampo(expresiones.password, e.target, 'contraseña-rep');
+        break;
 
-            break;
         case "cif":
             validarCampo(expresiones.cif, e.target, 'cif');
-            break;
+        break;
+
         case "direccion":
+            validarCampo(expresiones.direccion, e.target, 'direccion');
+        break;
 
-            break;
         case "localidad":
+            validarCampo(expresiones.localidad, e.target, 'localidad');
+        break;
 
-            break;
-        case "codigopostal":
+        case "cp":
+            validarCampo(expresiones.cp, e.target, 'cp');
+        break;
 
-            break;
         case "telefono":
+            validarCampo(expresiones.telefono, e.target, 'telefono');
+        break;
 
-            break;
         case "email":
+            validarCampo(expresiones.email, e.target, 'email');
+        break;
 
-            break;
         case "contacto":
-
-            break;
+            validarCampo(expresiones.contacto, e.target, 'contacto');
+        break;
     }
 }
 
