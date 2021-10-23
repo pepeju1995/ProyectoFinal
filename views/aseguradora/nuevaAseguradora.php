@@ -26,81 +26,61 @@
                 <div class="row justify-content-center">  
                     <div class="col-8 mb-3">
                         <label for="nombre">Nombre</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre de empresa">
-                        </div>
+                        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre de empresa">
                         <p id="nombre-valido" class="form-text ocultar-requisitos">El nombre de empresa debe contener entre 4 y 40 caracteres alfanumericos</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contraseña">Contraseña</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
-                        </div>
+                        <input class="form-control" type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contraseña-rep">Repite la contraseña</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="password" id="contraseña-rep" name="contraseña-rep" placeholder="Contraseña">
-                        </div>
+                        <input class="form-control" type="password" id="contraseña-rep" name="contraseña-rep" placeholder="Contraseña">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="cif">CIF</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="cif" name="cif" placeholder="CIF">
-                        </div>
+                        <input class="form-control" type="text" id="cif" name="cif" placeholder="CIF">
                         <p id="cif-valido" class="form-text ocultar-requisitos">Introducir 8 digitos y una letra</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="direccion">Direccion</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion">
-                        </div>
+                        <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="localidad">Localidad</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="localidad" name="localidad" placeholder="Localidad">
-                        </div>
+                        <input class="form-control" type="text" id="localidad" name="localidad" placeholder="Localidad">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="cp">Codigo Postal</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="cp" name="codigopostal" placeholder="CP">
-                        </div>
+                        <input class="form-control" type="text" id="cp" name="codigopostal" placeholder="CP">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="telefono">Telefono</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono">
-                        </div>
+                        <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="email">Email</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="email" id="email" name="email" placeholder="test@test.com">
-                        </div>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="test@test.com">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contacto">Persona de contacto</label>
-                        <div class="formulario-input">
-                            <input class="form-control" type="text" id="contacto" name="contacto" placeholder="Persona de contacto">
-                        </div>
+                        <input class="form-control" type="text" id="contacto" name="contacto" placeholder="Persona de contacto">
                         <p class="form-text ocultar-requisitos"></p>
                     </div>
 
