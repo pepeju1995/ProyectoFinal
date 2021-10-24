@@ -4,71 +4,80 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
         
-        <title>Document</title>
+        <title>Asegurados </title>
     </head>
     
     <body>
-        <?php require 'views/header.php'?>
+        <div class="container">    
+            <?php require 'views/header.php'?>
         
-        <div class="contenedor">
-            
             <?php if($this->mensaje != ""){ ?>
             <div>
                 <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
             </div>
             <?php } ?>
 
-            <table class="centrar tabla">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Direccion</th>
-                        <th>Localidad</th>
-                        <th>CP</th>
-                        <th>Telefono</th>
-                        <th>Direccion</th>
-                        <th>Localidad</th>
-                        <th>CP</th>
-                        <th>Aseguradora</th>
-                    </tr>
-                </thead>
+            <div class="row justify-content-around align-content-around">
+                <?php 
+                    include_once 'models/asegurado.php';
+                    foreach($this->asegurados as $row){
+                        $asegurado = new Asegurado();
+                        $asegurado = $row;
+                ?>
+                    <div id="card-<?php echo $asegurado->id; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <div class="card-header">
+                                Datos Personales
+                            </div>
+                            <li class="list-group-item"><?php echo $asegurado->nombre; ?></li>
+                            <li class="list-group-item"><?php echo $asegurado->apellido; ?></li>
 
-                <tbody id="tbody-aseguradoras">
-                    <?php 
-                        include_once 'models/asegurado.php';
-                        foreach($this->asegurados as $row){
-                            $asegurado = new Asegurado();
-                            $asegurado = $row;
-                    ?>
-                    <tr class="filas">
-                        <td><?php echo $asegurado->nombre; ?></td>
-                        <td><?php echo $asegurado->apellido; ?></td>
-                        <td><?php echo $asegurado->direccion; ?></td>
-                        <td><?php echo $asegurado->localidad; ?></td>
-                        <td><?php echo $asegurado->cp; ?></td>
-                        <td><?php echo $asegurado->telefono; ?></td>
-                        <td><?php echo $asegurado->direccion_rep; ?></td>
-                        <td><?php echo $asegurado->localidad_rep; ?></td>
-                        <td><?php echo $asegurado->cp_rep; ?></td>
-                        <td><?php echo $asegurado->aseguradora; ?></td>
-                        <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
-                        <td><a href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">Editar</a></td>
-                        <td><a href="<?php echo constant('URL'); ?>averias/nuevaAveria/<?php echo $asegurado->id; ?>">Nueva Averia</a></td>
-                        <td><a href="<?php echo constant('URL')?>asegurados/eliminarAsegurado/<?php echo $asegurado->id?>">Eliminar</a></td>
-                        <?php } ?>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                            <div class="card-header">
+                                Direccion
+                            </div>
+                            <li class="list-group-item"><?php echo $asegurado->direccion; ?></li>
+                            <li class="list-group-item"><?php echo $asegurado->localidad; ?></li>
+                            <li class="list-group-item"><?php echo $asegurado->cp; ?></li>
+
+                            <div class="card-header">
+                                Direccion de Reparaciones
+                            </div>
+                            <li class="list-group-item"><?php echo $asegurado->direccion_rep; ?></li>
+                            <li class="list-group-item"><?php echo $asegurado->localidad_rep; ?></li>
+                            <li class="list-group-item"><?php echo $asegurado->cp_rep; ?></li> 
+
+                            <div class="card-header">
+                                Contacto
+                            </div>
+                            <li class="list-group-item"><?php echo $asegurado->telefono; ?></li>
+
+                            <div class="card-header">
+                                Aseguradora
+                            </div>
+                            <div class="list-group-item"><?php echo $asegurado->aseguradora; ?></div>
+                            
+                            <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
+                                <li class="list-group-item text-center">
+                                    <a class="btn btn-secondary mb-2 me-2" href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">Editar</a>
+                                    <a class="btn btn-danger mb-2" href="<?php echo constant('URL')?>asegurados/eliminarAsegurado/<?php echo $asegurado->id?>">Eliminar</a>
+                                    <a style="width: 148.79px;" class="btn btn-primary mb-2" href="<?php echo constant('URL'); ?>averias/nuevaAveria/<?php echo $asegurado->id; ?>">Nueva Averia</a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } ?>  
+            </div>
+
             <?php if($_SESSION['user'] != 'admin'){?>
-            <button class="btn"><a href="<?php echo constant('URL')?>asegurados/">Nuevo Asegurado</a></button>
+                <div class="row justify-content-center">
+                    <a class="col-4 btn btn-secondary" href="<?php echo constant('URL')?>asegurados/">Nuevo Asegurado</a>
+                </div>                
             <?php } ?>
+        
+            <?php require 'views/footer.php'?>
         </div>
-
-        <?php require 'views/footer.php'?>
 
         <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
     </body>

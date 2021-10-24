@@ -16,11 +16,11 @@
 
             <h1>Aseguradoras</h1>
 
-            <?php if($this->mensaje != ""){ ?>
-                <div>
-                    <p class="mensaje"><?php echo $this->mensaje; ?></p>
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
+
                 </div>
-            <?php } ?>
+            </div>
 
             <form action="<?php echo constant('URL'); ?>aseguradoras/crearAseguradora" method="post" id="formulario">
                 <div class="row justify-content-center">  
@@ -37,9 +37,9 @@
                     </div>
 
                     <div class="col-8 mb-3">
-                        <label for="contraseña-rep">Repite la contraseña</label>
-                        <input class="form-control" type="password" id="contraseña-rep" name="contraseña-rep" placeholder="Contraseña">
-                        <p id="contraseña-rep-valido" class="form-text ocultar-requisitos">La contraseña no coincide.</p>
+                        <label for="contraseña2">Repite la contraseña</label>
+                        <input class="form-control" type="password" id="contraseña2" name="contraseña2" placeholder="Contraseña">
+                        <p id="contraseña2-valido" class="form-text ocultar-requisitos">La contraseña no coincide.</p>
                     </div>
 
                     <div class="col-8 mb-3">
@@ -69,19 +69,19 @@
                     <div class="col-8 mb-3">
                         <label for="telefono">Telefono</label>
                         <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono">
-                        <p id="telefono-valido" class="form-text ocultar-requisitos"></p>
+                        <p id="telefono-valido" class="form-text ocultar-requisitos">Introduzca un telefono valido (698654789)</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="email">Email</label>
                         <input class="form-control" type="email" id="email" name="email" placeholder="test@test.com">
-                        <p id="email-valido" class="form-text ocultar-requisitos"></p>
+                        <p id="email-valido" class="form-text ocultar-requisitos">Introduzca un email valido (test@test.com)</p>
                     </div>
 
                     <div class="col-8 mb-3">
                         <label for="contacto">Persona de contacto</label>
                         <input class="form-control" type="text" id="contacto" name="contacto" placeholder="Persona de contacto">
-                        <p id="contacto-valido" class="form-text ocultar-requisitos"></p>
+                        <p id="contacto-valido" class="form-text ocultar-requisitos">Introduzca un nombre valido (Antonio Gonzalez)</p>
                     </div>
 
                     <div class="col-5 text-center">

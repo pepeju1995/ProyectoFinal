@@ -10,10 +10,9 @@ bEliminar.forEach(boton => {
         if(confirm){
             httpRequest("http://localhost/ProyectoFinal/aseguradoras/eliminarAseguradora/" + id, function(e){
                 document.querySelector("#respuesta").innerHTML = '<p class="alert alert-danger" role="alert">Aseguradora eliminada correctamente</p>';
-                const tbody = document.querySelector("#tbody-aseguradoras");
-                const fila = document.querySelector("#fila-" + id);
+                const card = document.querySelector("#card-id");
 
-                tbody.removeChild(fila);
+                card.remove();
             });
         }
     })
@@ -50,7 +49,6 @@ function actualizar(){
 
 function obtenerDatos(){
     var formData = new FormData();
-
     formData.append("nombre", document.getElementsByName('nombre')[0].value);
     formData.append("cif", document.getElementsByName('cif')[0].value);
     formData.append("direccion", document.getElementsByName('direccion')[0].value);
@@ -72,5 +70,4 @@ function enviarFormulario(){
             document.querySelector("#respuesta").innerHTML = '<p class="alert alert-info" role="alert">Aseguradora actualizada correctamente</p>';
         }
     }
-    
 }

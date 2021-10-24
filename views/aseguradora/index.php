@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
         
-        <title>Document</title>
+        <title>Aseguradoras</title>
     </head>
     
     <body>
@@ -18,57 +18,51 @@
 
                 </div>
             </div>
-
-            <div class="row justify-content-center">
-                <div class="table-responsive col-9">
-                    <table class="table table-striped col-8">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>CIF</th>
-                                <th>Direccion</th>
-                                <th>Localidad</th>
-                                <th>CP</th>
-                                <th>Telefono</th>
-                                <th>Email</th>
-                                <th>Contacto</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="tbody-aseguradoras">
-                            <?php 
-                                include_once 'models/aseguradora.php';
-                                foreach($this->aseguradoras as $row){
-                                    $aseguradora = new Aseguradora();
-                                    $aseguradora = $row;
-                            ?>
-                                <tr id="fila-<?php echo $aseguradora->cif; ?>">
-                                    <td><?php echo $aseguradora->nombre; ?></td>
-                                    <td><?php echo $aseguradora->cif; ?></td>
-                                    <td><?php echo $aseguradora->direccion; ?></td>
-                                    <td><?php echo $aseguradora->localidad; ?></td>
-                                    <td><?php echo $aseguradora->cp; ?></td>
-                                    <td><?php echo $aseguradora->telefono; ?></td>
-                                    <td><?php echo $aseguradora->email; ?></td>
-                                    <td><?php echo $aseguradora->contacto; ?></td>
-                                    <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
-                                        <td> <a id="bEditar" class="btn btn-primary" data-cif = "<?php echo $aseguradora->cif; ?> ">Editar</a> </td>
-                                        <?php if($_SESSION['user'] == 'admin'){?>
-                                            <td><button id="bEliminar" class="btn btn-primary" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button></td>
-                                        <?php } ?>
-                                    <?php }?>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-
-                    <?php if($_SESSION['user'] == 'admin'){?>
-                        <div class="row justify-content-center">
-                            <a class="col-4 btn btn-secondary" href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a>
-                        </div>
-                    <?php } ?>
-                </div>
+            
+            <div class="row justify-content-around align-content-around">
+                <?php 
+                    include_once 'models/aseguradora.php';
+                    foreach($this->aseguradoras as $row){
+                        $aseguradora = new Aseguradora();
+                        $aseguradora = $row;
+                ?>
+                    <div id="card-<?php echo $aseguradora->cif; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <div class="card-header">
+                                Datos Personales
+                            </div>
+                            <li class="list-group-item"><?php echo $aseguradora->nombre; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->cif; ?></li>
+                            <div class="card-header">
+                                Direccion
+                            </div>
+                            <li class="list-group-item"><?php echo $aseguradora->direccion; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->localidad; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->cp; ?></li>
+                            <div class="card-header">
+                                Contacto
+                            </div>
+                            <li class="list-group-item"><?php echo $aseguradora->telefono; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->email; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->contacto; ?></li>
+                            <li class="list-group-item">
+                                <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
+                                    <a id="bEditar" class="btn btn-primary me-3" data-cif = "<?php echo $aseguradora->cif; ?> ">Editar</a>
+                                    <?php if($_SESSION['user'] == 'admin'){?>
+                                        <button id="bEliminar" class="btn btn-danger" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button>
+                                    <?php } ?>
+                                <?php }?>
+                            </li>
+                        </ul>
+                    </div>
+                <?php } ?>  
             </div>
+
+            <?php if($_SESSION['user'] == 'admin'){?>
+                <div class="row justify-content-center">
+                    <a class="col-4 btn btn-secondary" href="<?php echo constant('URL'); ?>aseguradoras/nuevaAseguradora">Nueva Aseguradora</a>
+                </div>
+            <?php } ?>
 
             <?php require 'views/footer.php'?>
         </div>

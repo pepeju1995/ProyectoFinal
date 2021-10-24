@@ -6,20 +6,24 @@ const expresiones = {
     cif: /^[0-9]{8}[a-zA-Z]{1}$/,
     password: /^.{4,16}$/,
     direccion: /^[a-zA-Z ]{4,45}[,]{1}[ 0-9]{2,4}$/,
+    localidad: /^[a-zA-Z ]{3,30}$/,
     cp: /^[0-9]{5}$/,
-}
+    telefono: /^[0-9]{9}$/,
+    email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    contacto: /^[a-zA-Z ]{4,30}$/
+};
 
-const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input.value)){
-        document.getElementById(campo).classList.remove('is-invalid');
-        document.getElementById(campo).classList.add('is-valid');
-        document.getElementById(`${campo}-valido`).classList.add('ocultar-requisitos');
-    } else {
-        document.getElementById(campo).classList.remove('is-valid');
-        document.getElementById(campo).classList.add('is-invalid');
-        document.getElementById(`${campo}-valido`).classList.remove('ocultar-requisitos');
-    }
-}
+const campos = {
+    nombre: false,
+    contraseña: false,
+    cif: false,
+    direccion: false,
+    localidad: false,
+    cp: false,
+    telefono: false,
+    email: false,
+    contacto: false
+};
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
@@ -29,10 +33,11 @@ const validarFormulario = (e) => {
 
         case "contraseña":
             validarCampo(expresiones.password, e.target, 'contraseña');
+            validarContraseña();
         break;
 
-        case "contraseña-rep":
-            validarCampo(expresiones.password, e.target, 'contraseña-rep');
+        case "contraseña2":
+            validarContraseña();
         break;
 
         case "cif":
@@ -65,6 +70,61 @@ const validarFormulario = (e) => {
     }
 }
 
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test(input.value)){
+        document.getElementById(campo).classList.remove('is-invalid');
+        document.getElementById(campo).classList.add('is-valid');
+        document.getElementById(`${campo}-valido`).classList.add('ocultar-requisitos');
+        campos[campo] = true;
+    } else {
+        document.getElementById(campo).classList.remove('is-valid');
+        document.getElementById(campo).classList.add('is-invalid');
+        document.getElementById(`${campo}-valido`).classList.remove('ocultar-requisitos');
+    }
+}
+
+const validarContraseña = () => {
+    const pass = document.getElementById('contraseña');
+    const passRep = document.getElementById('contraseña2');
+
+    if (pass.value !== passRep.value){
+        document.getElementById('contraseña2').classList.remove('is-valid');
+        document.getElementById('contraseña2').classList.add('is-invalid');
+        document.getElementById('contraseña2-valido').classList.remove('ocultar-requisitos');
+        campos["contraseña"] = false;
+    } else {
+        document.getElementById('contraseña2').classList.add('is-valid');
+        document.getElementById('contraseña2').classList.remove('is-invalid');
+        document.getElementById('contraseña2-valido').classList.add('ocultar-requisitos');
+        campos["contraseña"] = true;
+    }
+}
+
+const obtenerDatosAseguradora = () => {
+    var formData = new FormData();
+    formData.append("nombre", document.getElementById('nombre').value);
+    formData.append("contraseña", document.getElementById('contraseña').value);
+    formData.append("cif", document.getElementById('cif').value);
+    formData.append("direccion", document.getElementById('direccion').value);
+    formData.append("localidad", document.getElementById('localidad').value);
+    formData.append("cp", document.getElementById('cp').value);
+    formData.append("telefono", document.getElementById('telefono').value);
+    formData.append("email", document.getElementById('email').value);
+    formData.append("contacto", document.getElementById('contacto').value);
+    return formData;
+}
+
+const enviarFormularioAseguradora = () => {
+    const http = new XMLHttpRequest();
+    http.open("POST", "http://localhost/ProyectoFinal/aseguradoras/crearAseguradora");
+    http.send(obtenerDatosAseguradora());
+    http.onreadystatechange = () => {
+        if(http.readyState === 4 && http.status === 200){
+            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">Aseguradora creada correctamente</p>';
+        }
+    }
+}
+
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
@@ -72,6 +132,17 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    if(campos.nombre && campos.contraseña && campos.cif && campos.direccion && campos.localidad && campos.cp && campos.telefono && campos.email && campos.contacto){
+        enviarFormularioAseguradora();
+
+        document.querySelectorAll('.form-control').forEach((estilo) => {
+            estilo.classList.remove('is-valid');
+        })
+
+        formulario.reset();
+    } else {
+        document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Debe rellenar todos los campos correctamente</p>';
+    }
 });
 
 
@@ -94,7 +165,7 @@ function validarFormulario (evento) {
     }
 
     let pass = document.getElementById('contraseña').value;
-    let pass_rep = document.getElementById('contraseña-rep').value;
+    let pass_rep = document.getElementById('contraseña2').value;
     console.log(pass);
     console.log(pass_rep);
     if(pass !== pass_rep){
