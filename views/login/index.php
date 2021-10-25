@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <?php require_once 'views/header.php'?>
-            
+           
             <form class="form" action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">
                 <div class="row  justify-content-center">
                     <div class="col-8 mb-3">
