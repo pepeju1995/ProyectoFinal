@@ -10,7 +10,7 @@ bEliminar.forEach(boton => {
         if(confirm){
             httpRequest("http://localhost/ProyectoFinal/aseguradoras/eliminarAseguradora/" + id, function(e){
                 document.querySelector("#respuesta").innerHTML = '<p class="alert alert-danger" role="alert">Aseguradora eliminada correctamente</p>';
-                const card = document.querySelector("#card-id");
+                const card = document.querySelector("#card-" + id);
 
                 card.remove();
             });

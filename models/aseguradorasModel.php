@@ -40,6 +40,8 @@ class AseguradorasModel extends Model{
             $create_user->bind_param('ss', $datos[2], $user_pass);
             if($create_user->execute()){
                 return true;
+            } else {
+                
             }
         }
     }
