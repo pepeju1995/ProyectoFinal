@@ -80,5 +80,8 @@
         </div>
 
         <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/popper.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
     </body>
 </html>
