@@ -63,7 +63,7 @@ class Aseguradoras extends Controller {
             $_POST['cif'],
             $_POST['direccion'],
             $_POST['localidad'],
-            (int) $_POST['codigopostal'],
+            (int) $_POST['cp'],
             (int) $_POST['telefono'],
             $_POST['email'],
             $_POST['contacto']

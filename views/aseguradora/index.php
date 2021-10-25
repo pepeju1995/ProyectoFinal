@@ -29,7 +29,7 @@
                     <div id="card-<?php echo $aseguradora->cif; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
                         <ul class="list-group list-group-flush">
                             <div class="card-header">
-                                Datos Personales
+                                Datos Aseguradora
                             </div>
                             <li class="list-group-item"><?php echo $aseguradora->nombre; ?></li>
                             <li class="list-group-item"><?php echo $aseguradora->cif; ?></li>

@@ -20,38 +20,71 @@
 
                 </div>
             </div>
-            
-            <form id="actualizar-aseguradora" method="post">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" value="<?php echo $this->aseguradora->nombre; ?>" >
-                    
-                    <label for="cif">CIF</label>
-                    <input type="text" name="cif" disabled value="<?php echo $this->aseguradora->cif; ?>" >
-                    
-                    <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" value="<?php echo $this->aseguradora->direccion; ?>" >
-                    
-                    <label for="localidad">Localidad</label>
-                    <input type="text" name="localidad" value="<?php echo $this->aseguradora->localidad; ?>" >
-                    
-                    <label for="cp">Codigo Postal</label>
-                    <input type="text" name="cp" value="<?php echo $this->aseguradora->cp; ?>" >
-                    
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" value="<?php echo $this->aseguradora->telefono; ?>" >
-                        
-                    <label for="email">Email</label>
-                    <input type="email" name="email" value="<?php echo $this->aseguradora->email; ?>" >
-                        
-                    <label for="contacto">Contacto</label>
-                    <input type="text" name="contacto" value="<?php echo $this->aseguradora->contacto; ?>" >
-                        
-                    <input id="bActualizar" type="button" value="Actualizar" class="btn" onclick="actualizar();">
-            </form>
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Nueva Aseguradora</h4>
+                </div>
+                <div class="card-body">
+                    <form id="actualizar-aseguradora" method="post">
+                        <div class="container">
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="nombre">Nombre</label>
+                                    <input class="form-control" type="text" name="nombre" value="<?php echo $this->aseguradora->nombre; ?>" >
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">                    
+                                    <label for="cif">CIF</label>
+                                    <input class="form-control" type="text" name="cif" disabled value="<?php echo $this->aseguradora->cif; ?>" >
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Direccion</h6>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="direccion">Direccion</label>
+                                    <input class="form-control" type="text" name="direccion" value="<?php echo $this->aseguradora->direccion; ?>" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">                    
+                                    <label for="localidad">Localidad</label>
+                                    <input class="form-control" type="text" name="localidad" value="<?php echo $this->aseguradora->localidad; ?>" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="cp">Codigo Postal</label>
+                                    <input class="form-control" type="text" name="cp" value="<?php echo $this->aseguradora->cp; ?>" >
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Contacto</h6>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="telefono">Telefono</label>
+                                    <input class="form-control" type="tel" name="telefono" value="<?php echo $this->aseguradora->telefono; ?>" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">                        
+                                    <label for="email">Email</label>
+                                    <input class="form-control" type="email" name="email" value="<?php echo $this->aseguradora->email; ?>" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="contacto">Contacto</label>
+                                    <input class="form-control" type="text" name="contacto" value="<?php echo $this->aseguradora->contacto; ?>" >
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-5 text-center">
+                                    <input id="bActualizar" type="button" value="Actualizar" class="btn btn-primary" onclick="actualizar();">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>  
+            </div>
         
             <?php require_once 'views/footer.php'?>
-
-            <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
         </div>
+
+        <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
     </body>
 </html>
