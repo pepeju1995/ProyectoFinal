@@ -4,44 +4,98 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/styles.css">
-        <title>Document</title>
+        <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
+        <title>Nuevo Asegurado</title>
     </head>
 
     <body>
-        <?php require_once 'views/header.php'?>
-        <div class="contenedor">
-            <h1>Nuevo Asegurado</h1>
+        <div class="container">
+            <?php require_once 'views/header.php'?>
+            
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
 
-            <?php if($this->mensaje != ""){ ?>
-            <div>
-                <p class="mensaje"><?php echo $this->mensaje; ?></p>
+                </div>
             </div>
-            <?php } ?>
-            <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
-                <input type="text" name="dni" placeholder="DNI" required>
-            
-                <input type="text" name="nombre" placeholder="Nombre" required>
-            
-                <input type="text" name="apellido" placeholder="Apellidos" required>
-            
-                <input type="text" name="direccion" placeholder="Direccion" required>
-            
-                <input type="text" name="localidad" placeholder="Localidad" required>
-            
-                <input type="text" name="cp" placeholder="CP" required>
-            
-                <input type="tel" name="telefono" placeholder="Telefono" required>
-            
-                <input type="text" name="direccion_rep" placeholder="Direccion de la reparacion" required>
 
-                <input type="text" name="localidad_rep" placeholder="Localidad de la reparacion" required>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Nuevo Asegurado</h4>
+                </div>
+                <div class="card-body">
+                    <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
+                        <div class="container">
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Datos personales</h6>
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label for="dni">DNI</label>
+                                    <input class="form-control" id="dni" type="text" name="dni" placeholder="DNI">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label for="nombre">Nombre</label>
+                                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label>Apellidos</label>
+                                    <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Apellidos"> 
+                                </div>
+                            </div>
 
-                <input type="text" name="cp_rep" placeholder="CP de la reparacion" required>
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Direccion</h6>
+                                <div class="col-12 col-md-4 col-lg-3 mb-3">
+                                    <label for="direccion">Direccion</label>
+                                    <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" >
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 mb-3">      
+                                    <label for="localidad">Localidad</label>                                  
+                                    <input class="form-control" type="text" id="localidad" name="localidad" placeholder="Localidad" >
+                                </div>                
+                                <div class="col-12 col-md-4 col-lg-3 mb-3">
+                                    <label for="cp">Codigo postal</label>
+                                    <input class="form-control" type="text" id="cp" name="cp" placeholder="Codigo Postal" >
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Contacto</h6>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="telefono">Telefono</label>
+                                    <input class="form-control" type="text" id="telefono" name="telefono" placeholder="Telefono" >
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h6 class="card-subtitle mb-2 text-muted">Direccion de reparaciones</h6>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="direccion_rep">Direccion</label>
+                                    <input class="form-control" type="tel" id="direccion_rep" name="direccion_rep" placeholder="Direccion" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="localidad_rep">Localidad</label>
+                                    <input class="form-control" type="text" id="localidad_rep" name="localidad_rep" placeholder="Loclidad" >
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label  for="cp_rep">Codigo postal</label>
+                                    <input class="form-control" type="text" id="cp_rep" name="cp_rep" placeholder="Codigo Postal" >
+                                </div>                                        
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-5 text-center">
+                                    <input type="submit" class="btn btn-primary" value="Crear Asegurado">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>  
+            </div>
             
-                <input type="submit" value="Crear asegurado">
-            </form>
+            <?php require_once 'views/footer.php'?>
         </div>
-        <?php require_once 'views/footer.php'?>
+
+        <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/popper.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
     </body>
 </html>
