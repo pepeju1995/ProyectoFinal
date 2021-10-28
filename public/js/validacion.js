@@ -114,8 +114,12 @@ const enviarFormularioAseguradora = () => {
     http.send(obtenerDatosAseguradora());
     console.log(http)
     http.onreadystatechange = () => {
-        if(http.readyState === 4 && http.status === 200){
+        if(http.readyState === 4){
+         if(http.status === 200){
             document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">Aseguradora creada correctamente</p>';
+         } else {
+            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Tenemos un error</p>';
+         }
         }
     }
 }

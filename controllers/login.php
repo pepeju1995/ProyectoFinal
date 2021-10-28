@@ -15,11 +15,8 @@ class Login extends Controller {
         $pass = $_POST['contraseña'];
         if($this->model->login($user, $pass)){
             $_SESSION['user'] = $user;
-            if($_SESSION['user'] == 'admin'){
-                header('Location: '. constant('URL'). 'aseguradoras/verAseguradoras');
-            } else {
-                header('Location: '. constant('URL'). 'asegurados/verAsegurados/');
-            }
+        } else {
+            http_response_code(404);
         }
     }
 

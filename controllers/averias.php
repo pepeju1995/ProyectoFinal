@@ -2,11 +2,7 @@
 
 class Averias extends Controller{
 
-    function __construct(){
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
+    function __construct(){        
         if(isset($_SESSION['user'])){
             parent::__construct();
             $this->view->averias = [];

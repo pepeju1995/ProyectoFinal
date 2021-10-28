@@ -11,8 +11,14 @@
     <body>
         <div class="container">
             <?php require_once 'views/header.php'?>
+
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
+
+                </div>
+            </div>
            
-            <form class="form" action="<?php echo constant('URL'); ?>login/iniciarSesion" method="post">
+            <form class="form" action="<?php echo constant('URL'); ?>login/iniciarSesion" id="formulario" method="post">
                 <div class="row  justify-content-center">
                     <div class="col-8 mb-3">
                         <input class="form-control" type="text" name="usuario" placeholder="Usuario">
@@ -31,6 +37,7 @@
             <?php require 'views/footer.php'?>
         </div>
 
+        <script src="<?php echo constant('URL'); ?>public/js/funciones.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>

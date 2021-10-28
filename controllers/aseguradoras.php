@@ -34,9 +34,9 @@ class Aseguradoras extends Controller {
         );
 
         if($this->model->insert($newAseguradora)){
-            header("HTTP/1.1 404 Page not found");
+            http_response_code(200);
         } else {
-            
+            http_response_code(404);
         }
     }
 
@@ -68,15 +68,10 @@ class Aseguradoras extends Controller {
         var_dump($newAseguradora);
 
         if($this->model->update($newAseguradora)){
-            $aseguradora = new Aseguradora();
-            $aseguradora->datosAseguradora($newAseguradora);
-
-            $this->view->aseguradora = $aseguradora;
-            $this->view->mensaje = "Actualizacion realizada con exito";
+            http_response_code(200);
         } else {
-            $this->view->mensaje = "No se pudo actualizar";
+            http_response_code(404);
         }
-        $this->view->render('aseguradora/detalle');
     }
 
     function eliminarAseguradora($param = null){
