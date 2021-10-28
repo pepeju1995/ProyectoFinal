@@ -41,7 +41,7 @@ class AseguradorasModel extends Model{
             if($create_user->execute()){
                 return true;
             } else {
-                
+                return false;
             }
         }
     }

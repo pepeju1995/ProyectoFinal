@@ -34,13 +34,10 @@ class Aseguradoras extends Controller {
         );
 
         if($this->model->insert($newAseguradora)){
-            $mensaje = "Nueva aseguradora creada.";
+            header("HTTP/1.1 404 Page not found");
         } else {
-            $mensaje = "La aseguradora ya existe.";
+            
         }
-
-        $this->view->mensaje = $mensaje;
-        $this->verAseguradoras();
     }
 
     function verAseguradoras(){

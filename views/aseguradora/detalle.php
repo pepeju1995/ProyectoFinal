@@ -12,9 +12,6 @@
         <div class="container">
             <?php require_once 'views/header.php'?>
         
-            <h1>Informacion de <?php echo $this->aseguradora->nombre; ?></h1>
-            
-            
             <div class="row justify-content-center">
                 <div class="col-8 text-center" id="respuesta">
 
@@ -23,7 +20,7 @@
 
             <div class="card">
                 <div class="card-header text-center">
-                    <h4>Nueva Aseguradora</h4>
+                    <h4>Informacion de <?php echo $this->aseguradora->nombre; ?></h4>
                 </div>
                 <div class="card-body">
                     <form id="actualizar-aseguradora" method="post">

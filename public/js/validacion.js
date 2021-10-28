@@ -101,16 +101,10 @@ const validarContraseña = () => {
 }
 
 const obtenerDatosAseguradora = () => {
-    var formData = new FormData();
-    formData.append("nombre", document.getElementById('nombre').value);
-    formData.append("contraseña", document.getElementById('contraseña').value);
-    formData.append("cif", document.getElementById('cif').value);
-    formData.append("direccion", document.getElementById('direccion').value);
-    formData.append("localidad", document.getElementById('localidad').value);
-    formData.append("cp", document.getElementById('cp').value);
-    formData.append("telefono", document.getElementById('telefono').value);
-    formData.append("email", document.getElementById('email').value);
-    formData.append("contacto", document.getElementById('contacto').value);
+    let formData = new FormData();
+    inputs.forEach((input) => {
+        formData.append(input.name, input.value);
+    })
     return formData;
 }
 
@@ -118,6 +112,7 @@ const enviarFormularioAseguradora = () => {
     const http = new XMLHttpRequest();
     http.open("POST", "http://localhost/ProyectoFinal/aseguradoras/crearAseguradora");
     http.send(obtenerDatosAseguradora());
+    console.log(http)
     http.onreadystatechange = () => {
         if(http.readyState === 4 && http.status === 200){
             document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">Aseguradora creada correctamente</p>';
@@ -138,60 +133,9 @@ formulario.addEventListener('submit', (e) => {
         document.querySelectorAll('.form-control').forEach((estilo) => {
             estilo.classList.remove('is-valid');
         })
-
+        
         formulario.reset();
     } else {
         document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Debe rellenar todos los campos correctamente</p>';
     }
 });
-
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("formulario").addEventListener('change', validarFormulario);
-})
-
-function validarFormulario (evento) {
-    evento.preventDefault();
-    let usuario = document.getElementById('nombre').value;
-    if(usuario.length <= 40){
-        if(usuario.length === 0){
-            alert('El campo esta vacio.')
-            return;
-        }
-    } else {
-        alert('El nombre es demasiado largo');
-        return;
-    }
-
-    let pass = document.getElementById('contraseña').value;
-    let pass_rep = document.getElementById('contraseña2').value;
-    console.log(pass);
-    console.log(pass_rep);
-    if(pass !== pass_rep){
-        alert('Las contraseñas no coinciden')
-        return;
-    } else {
-        if(pass.length === 0){
-            alert('Debe introducir una contraseña')
-            return;
-        }
-        if(pass_rep.length === 0){
-            alert('Debe repetir la contraseña')
-            return;
-        }
-    }
-
-    let cif = document.getElementById('cif').value;
-    if(cif.length < 9){
-        if(cif.length === 0){
-            alert('El campo esta vacio.')
-            return;
-        }
-    }
-    if(cif.length > 9){
-        alert('El cif es demasiado largo');
-        return;
-    }
-    this.submit();
-}*/
