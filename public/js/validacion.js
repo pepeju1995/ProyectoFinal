@@ -100,7 +100,7 @@ const validarContraseña = () => {
     }
 }
 
-const obtenerDatosAseguradora = () => {
+const obtenerDatos = () => {
     let formData = new FormData();
     inputs.forEach((input) => {
         formData.append(input.name, input.value);
@@ -115,11 +115,26 @@ const enviarFormularioAseguradora = () => {
     console.log(http)
     http.onreadystatechange = () => {
         if(http.readyState === 4){
-         if(http.status === 200){
-            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">Aseguradora creada correctamente</p>';
-         } else {
-            document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Tenemos un error</p>';
-         }
+            if(http.status === 200){
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">Aseguradora creada correctamente</p>';
+            } else {
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Tenemos un error</p>';
+            }
+        }
+    }
+}
+
+const enviarFormulario = (url, accion) => {
+    const http = new XMLHttpRequest();
+    http.open("POST", url);
+    http.send(obtenerDatos());
+    http.onreadystatechange = () => {
+        if(http.readyState === 4){
+            if(http.status === 200){
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">' + accion[0] + '</p>';
+            } else {
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">' + accion[1] + '</p>';
+            }
         }
     }
 }
@@ -132,7 +147,8 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     if(campos.nombre && campos.contraseña && campos.cif && campos.direccion && campos.localidad && campos.cp && campos.telefono && campos.email && campos.contacto){
-        enviarFormularioAseguradora();
+        //enviarFormularioAseguradora();
+        enviarFormulario("http://localhost/ProyectoFinal/aseguradoras/crearAseguradora", ["Aseguradora creada correctamente", "No es posible crear la aseguradora"]);
 
         document.querySelectorAll('.form-control').forEach((estilo) => {
             estilo.classList.remove('is-valid');
