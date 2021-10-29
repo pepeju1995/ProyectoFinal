@@ -2,6 +2,10 @@
     display: none;
 }
 
-.container{
-    min-height: 100vh;
+.card-header{
+    background-color: cornflowerblue;
+}
+
+.bg-primary{
+    background-color: cornflowerblue!important;
 }

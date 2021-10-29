@@ -78,12 +78,10 @@ class Aseguradoras extends Controller {
         $id = $param[0];
         
         if($this->model->drop($id)){
-            $mensaje = "Elemento eliminado";
+            http_response_code(200);
         } else {
-            $mensaje = "No se pudo eliminar el elemento";
+            http_response_code(404);
         }
-        //$this->verAseguradoras();
-        echo $mensaje;
     }
 
 }

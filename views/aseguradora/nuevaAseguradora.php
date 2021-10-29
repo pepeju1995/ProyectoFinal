@@ -19,7 +19,8 @@
 
                 </div>
             </div>
-            <div class="card">
+
+            <div class="card mb-5">
                 <div class="card-header text-center">
                     <h4>Nueva Aseguradora</h4>
                 </div>

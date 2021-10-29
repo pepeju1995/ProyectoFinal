@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
     <?php if(isset($_SESSION['user'])){?>
         <div class="container-fluid">
             <a href="<?php echo constant('URL'); ?>" class="navbar-brand">

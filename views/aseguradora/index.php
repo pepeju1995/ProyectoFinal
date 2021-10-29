@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/estilos.css">
         
         <title>Aseguradoras</title>
     </head>
@@ -45,7 +46,7 @@
                             <li class="list-group-item"><?php echo $aseguradora->telefono; ?></li>
                             <li class="list-group-item"><?php echo $aseguradora->email; ?></li>
                             <li class="list-group-item"><?php echo $aseguradora->contacto; ?></li>
-                            <li class="list-group-item">
+                            <li class="list-group-item text-center">
                                 <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
                                     <a id="bEditar" class="btn btn-primary me-3" data-cif = "<?php echo $aseguradora->cif; ?> ">Editar</a>
                                     <?php if($_SESSION['user'] == 'admin'){?>

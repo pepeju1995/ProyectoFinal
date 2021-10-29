@@ -22,7 +22,7 @@ class AseguradorasModel extends Model{
             }
             return $items;
         }catch(mysqli_sql_exception $e){
-            echo "ERROR";
+            return false;
         }
     }
 
