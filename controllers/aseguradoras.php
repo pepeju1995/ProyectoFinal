@@ -6,7 +6,6 @@ class Aseguradoras extends Controller {
         if(isset($_SESSION['user'])){
             parent::__construct();
             $this->view->aseguradoras = [];
-            $this->view->mensaje = "";
         } else {
             header('Location: '. constant('URL'). 'login');
         }
@@ -65,7 +64,6 @@ class Aseguradoras extends Controller {
             $_POST['email'],
             $_POST['contacto']
         );
-        var_dump($newAseguradora);
 
         if($this->model->update($newAseguradora)){
             http_response_code(200);

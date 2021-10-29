@@ -31,10 +31,9 @@
                 $_SESSION['user']
             );
             if($this->model->insert($nuevoAsegurado)){
-                $this->view->mensaje = "Nuevo Asegurado creado";
-                $this->verAsegurados();
+                http_response_code(200);
             } else {
-                $this->view->mensaje = "No se ha podido crear el asegurado";
+                http_response_code(404);
             }
         }
 
@@ -51,9 +50,9 @@
             );
 
             if($this->model->update($aseguradoActualizado)){
-                $this->view->mensaje =  "Actualizado con exito";
+                http_response_code(200);
             } else {
-                $this->view->mensaje =   "No se pudo actualizar";
+                http_response_code(404);
             }
         }
 
@@ -78,11 +77,10 @@
 
         function eliminarAsegurado($id){
             if($this->model->drop($id[0])){
-                $this->view->mensaje = "elemento eliminado";
+                http_response_code(200);
             } else{
-                $this->view->mensaje =  "Imposible borrar el elemento";
+                http_response_code(404);
             }
-            $this->verAsegurados();
         }
     }
 ?>
