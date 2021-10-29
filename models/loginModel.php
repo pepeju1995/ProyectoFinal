@@ -25,7 +25,6 @@ class LoginModel extends Model{
         $stmt->bind_param('ss', $user, $password);
         $stmt->execute();
         $result = $stmt->get_result()->fetch_row();
-        var_dump($result);
         if(count($result)){
             return true;
         } else {

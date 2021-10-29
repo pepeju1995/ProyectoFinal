@@ -18,7 +18,7 @@
                 </div>
             </div>
            
-            <form class="form" action="<?php echo constant('URL'); ?>login/iniciarSesion" id="formulario" method="post">
+            <form class="form" id="formulario" method="post">
                 <div class="row  justify-content-center">
                     <div class="col-8 mb-3">
                         <input class="form-control" type="text" name="usuario" placeholder="Usuario">
@@ -27,7 +27,7 @@
                         <input class="form-control" type="password" name="contraseña" placeholder="Contraseña">
                     </div>          
                     <div class="col-5 mb-3 text-center">
-                        <button class="btn btn-primary" type="submit">Iniciar Sesion</button>
+                        <input class="btn btn-primary" type="submit" value="Iniciar Sesion"/>
                     </div>
                     
                 </div>
@@ -37,9 +37,9 @@
             <?php require 'views/footer.php'?>
         </div>
 
-        <script src="<?php echo constant('URL'); ?>public/js/funciones.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/popper.min.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/login.js" type="module"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>
     </body>
 </html>

@@ -1,37 +1,25 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
-
-const obtenerDatos = () => {
-    let datos = new FormData();
-    inputs.forEach((input) => {
-        datos.append(input.name, input.value);
-    })
-    return datos;
-}
-
-const enviarFormularioLogin = () => {
+const enviarFormulario = (url, accion, inputs) => {
     const http = new XMLHttpRequest();
-    http.open("POST", "http://localhost/ProyectoFinal/login/iniciarSesion");
-    http.send(obtenerDatos());
+    http.open("POST", url);
+    http.send(obtenerDatos(inputs));
     http.onreadystatechange = () => {
         if(http.readyState === 4){
-            if(http.status !== 200){
-                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">Usuario y/o contraseña invalidos</p>';
+            if(http.status === 200){
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-success" role="alert">' + accion[0] + '</p>';
             } else {
-                var user = http.response.indexOf("admin");
-                if(user === -1){
-                    window.location.href ="http://localhost/ProyectoFinal/asegurados/verAsegurados";
-                } else{
-                    window.location.href ="http://localhost/ProyectoFinal/aseguradoras/verAseguradoras";
-                }
-            }            
+                document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">' + accion[1] + '</p>';
+            }
         }
     }
 }
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-    enviarFormularioLogin();
-})
+const obtenerDatos = (inputs) => {
+    var datos = new FormData();
+    inputs.forEach((input) => {
+        datos.append(input.name, input.value);
+    })
+    console.log(datos.get('usuario'))
+    return datos;
+}
 
-
+export {obtenerDatos, enviarFormulario};

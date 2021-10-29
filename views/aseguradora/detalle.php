@@ -23,7 +23,7 @@
                     <h4>Informacion de <?php echo $this->aseguradora->nombre; ?></h4>
                 </div>
                 <div class="card-body">
-                    <form id="actualizar-aseguradora" method="post">
+                    <form id="formulario" method="post">
                         <div class="container">
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
@@ -71,7 +71,7 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-5 text-center">
-                                    <input id="bActualizar" type="button" value="Actualizar" class="btn btn-primary" onclick="actualizar();">
+                                    <input id="bActualizar" type="submit" value="Actualizar" class="btn btn-primary">
                                 </div>
                             </div>
                         </div>
@@ -82,6 +82,9 @@
             <?php require_once 'views/footer.php'?>
         </div>
 
-        <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/editarAseguradora.js" type="module"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>
     </body>
 </html>

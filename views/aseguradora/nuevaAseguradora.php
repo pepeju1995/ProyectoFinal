@@ -24,7 +24,7 @@
                     <h4>Nueva Aseguradora</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo constant('URL'); ?>aseguradoras/crearAseguradora" method="post" id="formulario">
+                    <form method="post" id="formulario">
                         <div class="container">
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
@@ -101,9 +101,9 @@
             <?php require_once 'views/footer.php'?>
         </div>
         
-        <script src="<?php echo constant('URL'); ?>public/js/validacion.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/popper.min.js"></script>
-        <script src="<?php echo constant('URL'); ?>public/js/bootstrap.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/validacion.js" type="module"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>
     </body>
 </html>
