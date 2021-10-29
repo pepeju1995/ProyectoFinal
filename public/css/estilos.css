@@ -1,3 +1,7 @@
 .ocultar-requisitos {
     display: none;
 }
+
+.container{
+    min-height: 100vh;
+}
