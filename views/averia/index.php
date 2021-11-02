@@ -15,21 +15,36 @@
         <div class="container">
             <?php require_once 'views/header.php'?>
         
-            <h1>Aseguradoras</h1>
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
 
-            <?php if($this->mensaje != ""){ ?>
-            <div>
-                <p class="mensaje"><?php echo $this->mensaje; ?></p>
+                </div>
             </div>
-            <?php } ?>
 
-            <div class="centrar formulario">
-                <form action="<?php echo constant('URL'); ?>averias/crearAveria" method="post">       
-                    <input type="text" disbled name="asegurado" value="<?php echo $this->asegurado; ?>">
-            
-                    <textarea name="descripcion" placeholder="Descripcion de la averia" cols="30" rows="10"></textarea>
-            
-                    <input type="submit" value="Crear asegurado">
+            <div class="card mb-5">
+                <div class="card-header text-center mb-3">
+                    <h4>Nueva Averia</h4>
+                </div>
+                <form action="<?php echo constant('URL'); ?>averias/crearAveria" method="post" id="formulario">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="asegurado">Asegurado</label>
+                                <input class="form-control" type="text" readonly id="asegurado" name="asegurado" value="<?php echo $this->asegurado; ?>">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="descripcion">Descripcion de la averia</label>
+                                <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion de la averia" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-5 text-center">
+                                <button class="btn btn-primary" type="submit">Registrar averia</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         

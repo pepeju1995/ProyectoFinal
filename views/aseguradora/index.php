@@ -48,7 +48,7 @@
                             <li class="list-group-item"><?php echo $aseguradora->contacto; ?></li>
                             <li class="list-group-item text-center">
                                 <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
-                                    <a id="bEditar" class="btn btn-primary me-3" data-cif = "<?php echo $aseguradora->cif; ?> ">Editar</a>
+                                    <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->cif; ?>">Editar</a>
                                     <?php if($_SESSION['user'] == 'admin'){?>
                                         <button id="bEliminar" class="btn btn-danger" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button>
                                     <?php } ?>
