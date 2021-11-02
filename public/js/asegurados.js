@@ -10,7 +10,6 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(inputs)
     if(camposAseguradora.nombre && camposAseguradora.apellido && camposAseguradora.nif && camposAseguradora.direccion 
         && camposAseguradora.localidad && camposAseguradora.cp && camposAseguradora.telefono 
         && camposAseguradora.direccion_rep && camposAseguradora.localidad_rep && camposAseguradora.cp_rep){

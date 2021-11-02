@@ -30,12 +30,12 @@ const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.getElementById(campo).classList.remove('is-invalid');
         document.getElementById(campo).classList.add('is-valid');
-        //document.getElementById(`${campo}-valido`).classList.add('ocultar-requisitos');
+        document.getElementById(`${campo}-valido`).classList.add('ocultar-requisitos');
         camposAseguradora[campo] = true;
     } else {
         document.getElementById(campo).classList.remove('is-valid');
         document.getElementById(campo).classList.add('is-invalid');
-        //document.getElementById(`${campo}-valido`).classList.remove('ocultar-requisitos');
+        document.getElementById(`${campo}-valido`).classList.remove('ocultar-requisitos');
         camposAseguradora[campo] = false;
     }
 }
@@ -137,7 +137,6 @@ const obtenerDatos = (inputs) => {
     var datos = new FormData();
     inputs.forEach((input) => {
         datos.append(input.name, input.value);
-        console.log(input.name)
     })
     return datos;
 }
