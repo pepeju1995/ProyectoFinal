@@ -3,7 +3,7 @@
 class Aseguradora{
     
     public $nombre;
-    public $cif;
+    public $nif;
     public $direccion;
     public $localidad;
     public $cp;
@@ -13,7 +13,7 @@ class Aseguradora{
 
     public function datosAseguradora($datos){
         $this->nombre = $datos[0];
-        $this->cif = $datos[1];
+        $this->nif = $datos[1];
         $this->direccion = $datos[2];
         $this->localidad = $datos[3];
         $this->cp = $datos[4];

@@ -23,13 +23,13 @@
                     <h4>Nuevo Asegurado</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo constant('URL'); ?>asegurados/crearAsegurado" method="post">
+                    <form id="crearAsegurado" method="post">
                         <div class="container">
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos personales</h6>
                                 <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label for="dni">DNI</label>
-                                    <input class="form-control" id="dni" type="text" name="dni" placeholder="DNI">
+                                    <label for="nif">NIF</label>
+                                    <input class="form-control" id="nif" type="text" name="nif" placeholder="NIF">
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <label for="nombre">Nombre</label>
@@ -83,7 +83,7 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-5 text-center">
-                                    <input type="submit" class="btn btn-primary" value="Crear Asegurado">
+                                    <button type="submit" class="btn btn-primary">Crear Asegurado</button>
                                 </div>
                             </div>
                         </div>
@@ -94,6 +94,7 @@
             <?php require_once 'views/footer.php'?>
         </div>
 
+        <script src="<?php echo constant('URL'); ?>public/js/asegurados.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>

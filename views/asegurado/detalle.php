@@ -28,8 +28,8 @@
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
                                 <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label>DNI</label>
-                                    <input class="form-control" type="text" name="dni" readonly value="<?php echo $this->asegurado->id; ?>">
+                                    <label>NIF</label>
+                                    <input class="form-control" type="text" name="nif" readonly value="<?php echo $this->asegurado->id; ?>">
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <label>Nombre</label>
@@ -69,15 +69,15 @@
                                 <h6 class="card-subtitle mb-2 text-muted">Direccion de reparaciones</h6>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label for="direccion_rep">Direccion</label>
-                                    <input class="form-control" type="tel" id="direccion_rep" name="direccion_rep" value="<?php echo $this->asegurado->direccion_rep; ?>" >
+                                    <input class="form-control" type="tel" id="direccion_rep" name="direccion" value="<?php echo $this->asegurado->direccion_rep; ?>" >
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label for="localidad_rep">Localidad</label>
-                                    <input class="form-control" type="text" id="localidad_rep" name="localidad_rep" value="<?php echo $this->asegurado->localidad_rep; ?>" >
+                                    <input class="form-control" type="text" id="localidad_rep" name="localidad" value="<?php echo $this->asegurado->localidad_rep; ?>" >
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label  for="cp_rep">Codigo postal</label>
-                                    <input class="form-control" type="text" id="cp_rep" name="cp_rep" value="<?php echo $this->asegurado->cp_rep; ?>" >
+                                    <input class="form-control" type="text" id="cp_rep" name="cp" value="<?php echo $this->asegurado->cp_rep; ?>" >
                                 </div>                                        
                             </div>
 
@@ -94,6 +94,7 @@
             <?php require_once 'views/footer.php'?>
         </div>
 
+        <script src="<?php echo constant('URL'); ?>public/js/asegurados.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>

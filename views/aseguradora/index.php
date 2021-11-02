@@ -27,13 +27,13 @@
                         $aseguradora = new Aseguradora();
                         $aseguradora = $row;
                 ?>
-                    <div id="card-<?php echo $aseguradora->cif; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
+                    <div id="card-<?php echo $aseguradora->nif; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
                         <ul class="list-group list-group-flush">
                             <div class="card-header">
                                 Datos Aseguradora
                             </div>
                             <li class="list-group-item"><?php echo $aseguradora->nombre; ?></li>
-                            <li class="list-group-item"><?php echo $aseguradora->cif; ?></li>
+                            <li class="list-group-item"><?php echo $aseguradora->nif; ?></li>
                             <div class="card-header">
                                 Direccion
                             </div>
@@ -47,10 +47,10 @@
                             <li class="list-group-item"><?php echo $aseguradora->email; ?></li>
                             <li class="list-group-item"><?php echo $aseguradora->contacto; ?></li>
                             <li class="list-group-item text-center">
-                                <?php if($_SESSION['user'] == $aseguradora->cif || $_SESSION['user'] == 'admin'){?>
-                                    <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->cif; ?>">Editar</a>
+                                <?php if($_SESSION['user'] == $aseguradora->nif || $_SESSION['user'] == 'admin'){?>
+                                    <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->nif; ?>">Editar</a>
                                     <?php if($_SESSION['user'] == 'admin'){?>
-                                        <button id="bEliminar" class="btn btn-danger" data-cif="<?php echo $aseguradora->cif ?>">Eliminar</button>
+                                        <button id="bEliminar" class="btn btn-danger" data-nif="<?php echo $aseguradora->nif ?>">Eliminar</button>
                                     <?php } ?>
                                 <?php }?>
                             </li>

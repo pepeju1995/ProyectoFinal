@@ -25,7 +25,7 @@
                     <h4>Nueva Aseguradora</h4>
                 </div>
                 <div class="card-body">
-                    <form method="post" id="formulario">
+                    <form method="post" id="crearAseguradora">
                         <div class="container">
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
@@ -35,9 +35,9 @@
                                     <p id="nombre-valido" class="form-text ocultar-requisitos">El nombre de empresa debe contener entre 4 y 40 caracteres alfanumericos</p>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3 mb-3">
-                                    <label for="cif">CIF</label>
-                                    <input class="form-control" type="text" id="cif" name="cif" placeholder="CIF">
-                                    <p id="cif-valido" class="form-text ocultar-requisitos">Introducir 8 digitos y una letra</p>
+                                    <label for="nif">nif</label>
+                                    <input class="form-control" type="text" id="nif" name="nif" placeholder="nif">
+                                    <p id="nif-valido" class="form-text ocultar-requisitos">Introducir 8 digitos y una letra</p>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3 mb-3">
                                     <label for="contraseña">Contraseña</label>
@@ -102,7 +102,7 @@
             <?php require_once 'views/footer.php'?>
         </div>
         
-        <script src="<?php echo constant('URL'); ?>public/js/validacion.js" type="module"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/aseguradoras.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>

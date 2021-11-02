@@ -30,7 +30,7 @@ class AseguradorasModel extends Model{
         if($datos){
             $query = $this->db->connect();
 
-            $stmt = $query->prepare("INSERT INTO aseguradoras (nombre, cif, direccion, localidad, cp, telefono, email, contacto) 
+            $stmt = $query->prepare("INSERT INTO aseguradoras (nombre, nif, direccion, localidad, cp, telefono, email, contacto) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param('ssssiiss', $datos[0], $datos[2], $datos[3], $datos[4], $datos[5],
             $datos[6], $datos[7], $datos[8]);
@@ -49,7 +49,7 @@ class AseguradorasModel extends Model{
     public function getById($id){
         $item = new Aseguradora();
         $query = $this->db->connect();
-        $stmt = $query->prepare("SELECT * FROM aseguradoras WHERE cif = ?");
+        $stmt = $query->prepare("SELECT * FROM aseguradoras WHERE nif = ?");
         try{
             $stmt->bind_param('s', $id);
             $stmt->execute();
@@ -67,7 +67,7 @@ class AseguradorasModel extends Model{
 
     public function update($datos){
         $query = $this->db->connect();
-        $stmt = $query->prepare("UPDATE aseguradoras SET nombre = ?, direccion = ?, localidad = ?, cp = ?, telefono = ?, email = ?, contacto = ? WHERE cif = ?");
+        $stmt = $query->prepare("UPDATE aseguradoras SET nombre = ?, direccion = ?, localidad = ?, cp = ?, telefono = ?, email = ?, contacto = ? WHERE nif = ?");
         try{
             $stmt->bind_param('sssiisss', $datos[0], $datos[2], $datos[3], $datos[4],
             $datos[5], $datos[6], $datos[7], $datos[1]);
@@ -85,7 +85,7 @@ class AseguradorasModel extends Model{
             $query->query("DELETE FROM asegurados WHERE aseguradora = '$id'");
             $query->query("DELETE FROM usuarios WHERE user = '$id'");
             $query->query("DELETE FROM averias WHERE aseguradora = '$id'");
-            $query->query("DELETE FROM aseguradoras WHERE cif = '$id'");
+            $query->query("DELETE FROM aseguradoras WHERE nif = '$id'");
         }
         return $query;
     }

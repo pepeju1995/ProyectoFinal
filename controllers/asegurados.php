@@ -18,7 +18,7 @@
 
         function crearAsegurado(){
             $nuevoAsegurado = array(
-                $_POST['dni'],
+                $_POST['nif'],
                 $_POST['nombre'],
                 $_POST['apellido'],
                 $_POST['direccion'],
@@ -39,7 +39,7 @@
 
         function actualizarAsegurado(){
             $aseguradoActualizado = array(
-                $_POST['dni'],
+                $_POST['nif'],
                 $_POST['direccion'], 
                 $_POST['localidad'], 
                 (int)$_POST['cp'], 

@@ -23,7 +23,7 @@ class Aseguradoras extends Controller {
         $newAseguradora = array(
             $_POST['nombre'],
             $_POST['contraseña'],
-            $_POST['cif'],
+            $_POST['nif'],
             $_POST['direccion'],
             $_POST['localidad'],
             (int) $_POST['cp'],
@@ -56,7 +56,7 @@ class Aseguradoras extends Controller {
     function actualizarAseguradora(){
         $newAseguradora = array(
             $_POST['nombre'],
-            $_POST['cif'],
+            $_POST['nif'],
             $_POST['direccion'],
             $_POST['localidad'],
             (int) $_POST['cp'],
