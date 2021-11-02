@@ -7,6 +7,7 @@ if(document.getElementById("editarAseguradora")){
     const inputs = document.querySelectorAll("#editarAseguradora input");
 
     inputs.forEach((input) => {
+        console.log(input.value);
         input.addEventListener('keyup', validarFormulario);
         input.addEventListener('blur', validarFormulario);
     })
@@ -28,7 +29,8 @@ if(document.getElementById('crearAseguradora')){
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        if(camposAseguradora.nombre && camposAseguradora.contraseña && camposAseguradora.nif && camposAseguradora.direccion && camposAseguradora.localidad && camposAseguradora.cp && camposAseguradora.telefono && camposAseguradora.email && camposAseguradora.contacto){
+        if(camposAseguradora.nombre && camposAseguradora.contraseña && camposAseguradora.nif && camposAseguradora.direccion 
+            && camposAseguradora.localidad && camposAseguradora.cp && camposAseguradora.telefono && camposAseguradora.email && camposAseguradora.contacto){
             enviarFormulario("http://localhost/ProyectoFinal/aseguradoras/crearAseguradora", ["Aseguradora creada correctamente", "No es posible crear la aseguradora"], inputs);
     
             document.querySelectorAll('.form-control').forEach((estilo) => {

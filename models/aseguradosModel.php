@@ -57,7 +57,7 @@ class AseguradosModel extends Model{
 
     function getById($id){
         try{
-            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE nif = '$id'");
+            $query = $this->db->connect()->query("SELECT * FROM asegurados WHERE dni = '$id'");
             $item = new Asegurado();
             $item->datosAsegurado($query->fetch_row());
             return $item;
@@ -68,9 +68,9 @@ class AseguradosModel extends Model{
 
     function update($datos){
         $query = $this->db->connect();
-        $stmt = $query->prepare("UPDATE asegurados SET direccion=?, localidad=?, cp=?, telefono=?, direccion_rep=?, localidad_rep=?, cp_rep=? WHERE nif=?");
+        $stmt = $query->prepare("UPDATE asegurados SET direccion=?, localidad=?, cp=?, telefono=?, direccion_rep=?, localidad_rep=?, cp_rep=? WHERE dni=?");
         try{
-            $stmt->bind_param('ssiissii', $datos[1], $datos[2], $datos[3], $datos[4], $datos[5], $datos[6],
+            $stmt->bind_param('ssiissis', $datos[1], $datos[2], $datos[3], $datos[4], $datos[5], $datos[6],
                 $datos[7], $datos[0]);
             if($stmt->execute()){
                 return true;
@@ -84,7 +84,7 @@ class AseguradosModel extends Model{
 
     public function drop($id){
         $query = $this->db->connect();
-        $stmt = $query->prepare("DELETE FROM asegurados WHERE nif = ?");
+        $stmt = $query->prepare("DELETE FROM asegurados WHERE dni = ?");
         try{
             $stmt->bind_param('s', $id);
             $stmt->execute();

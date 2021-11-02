@@ -75,11 +75,14 @@
             }
         }
 
-        function eliminarAsegurado($id){
-            if($this->model->drop($id[0])){
-                http_response_code(200);
-            } else{
-                http_response_code(404);
+        function eliminarAsegurado($param = null){
+            $id = $param;
+            if($id != null){
+                if($this->model->drop($id[0])){
+                    http_response_code(200);
+                } else{
+                    http_response_code(404);
+                }
             }
         }
     }

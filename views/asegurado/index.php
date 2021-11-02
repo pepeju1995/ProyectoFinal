@@ -80,7 +80,7 @@
                                     <input class="form-control" type="text" id="cp_rep" name="cp_rep" placeholder="Codigo Postal" >
                                 </div>                                        
                             </div>
-
+                            
                             <div class="row justify-content-center">
                                 <div class="col-5 text-center">
                                     <button type="submit" class="btn btn-primary">Crear Asegurado</button>

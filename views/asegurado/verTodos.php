@@ -14,11 +14,11 @@
         <div class="container">    
             <?php require 'views/header.php'?>
         
-            <?php if($this->mensaje != ""){ ?>
-            <div>
-                <p id="respuesta" class="mensaje"><?php echo $this->mensaje; ?></p>
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" id="respuesta">
+
+                </div>
             </div>
-            <?php } ?>
 
             <div class="row justify-content-around align-content-around">
                 <?php 
@@ -59,11 +59,13 @@
                             </div>
                             <div class="list-group-item"><?php echo $asegurado->aseguradora; ?></div>
                             
-                            <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
+                            <?php if($_SESSION['user'] == $asegurado->aseguradora || $_SESSION['user'] == 'admin'){?>
                                 <li class="list-group-item text-center">
                                     <a class="btn btn-secondary mb-2 me-2" href="<?php echo constant('URL')?>asegurados/verAsegurado/<?php echo $asegurado->id?>">Editar</a>
-                                    <a class="btn btn-danger mb-2" href="<?php echo constant('URL')?>asegurados/eliminarAsegurado/<?php echo $asegurado->id?>">Eliminar</a>
-                                    <a style="width: 148.79px;" class="btn btn-primary mb-2" href="<?php echo constant('URL'); ?>averias/nuevaAveria/<?php echo $asegurado->id; ?>">Nueva Averia</a>
+                                    <button id="bEliminar" class="btn btn-danger mb-2" data-nif="<?php echo $asegurado->id?>">Eliminar</button>
+                                    <?php if($_SESSION['user'] == $asegurado->aseguradora){?>
+                                        <a style="width: 148.79px;" class="btn btn-primary mb-2" href="<?php echo constant('URL'); ?>averias/nuevaAveria/<?php echo $asegurado->id; ?>">Nueva Averia</a>
+                                    <?php } ?>
                                 </li>
                             <?php } ?>
                         </ul>
@@ -80,7 +82,7 @@
             <?php require 'views/footer.php'?>
         </div>
 
-        
+        <script src="<?php echo constant('URL'); ?>public/js/asegurados.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>

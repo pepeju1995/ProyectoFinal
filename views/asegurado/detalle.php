@@ -23,7 +23,7 @@
                     <h4>Detalle de <?php echo $this->asegurado->nombre . " " . $this->asegurado->apellido; ?></h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo constant('URL'); ?>asegurados/actualizarAsegurado" method="post">
+                    <form id="editarAsegurado" method="post">
                         <div class="container">
                             <div class="row">
                                 <h6 class="card-subtitle mb-2 text-muted">Datos de la aseguradora</h6>
@@ -69,21 +69,21 @@
                                 <h6 class="card-subtitle mb-2 text-muted">Direccion de reparaciones</h6>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label for="direccion_rep">Direccion</label>
-                                    <input class="form-control" type="tel" id="direccion_rep" name="direccion" value="<?php echo $this->asegurado->direccion_rep; ?>" >
+                                    <input class="form-control" type="tel" id="direccion_rep" name="direccion_rep" value="<?php echo $this->asegurado->direccion_rep; ?>" >
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label for="localidad_rep">Localidad</label>
-                                    <input class="form-control" type="text" id="localidad_rep" name="localidad" value="<?php echo $this->asegurado->localidad_rep; ?>" >
+                                    <input class="form-control" type="text" id="localidad_rep" name="localidad_rep" value="<?php echo $this->asegurado->localidad_rep; ?>" >
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
                                     <label  for="cp_rep">Codigo postal</label>
-                                    <input class="form-control" type="text" id="cp_rep" name="cp" value="<?php echo $this->asegurado->cp_rep; ?>" >
+                                    <input class="form-control" type="text" id="cp_rep" name="cp_rep" value="<?php echo $this->asegurado->cp_rep; ?>" >
                                 </div>                                        
                             </div>
 
                             <div class="row justify-content-center">
                                 <div class="col-5 text-center">
-                                    <input type="submit" class="btn btn-primary" value="Actualizar">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
                                 </div>
                             </div>
                         </div>
