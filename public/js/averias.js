@@ -1,4 +1,4 @@
-import { validarFormulario, camposAseguradora, enviarFormulario} from "./funciones.js";
+import { enviarFormulario } from "./funciones.js";
 
 if(document.getElementById("crearAveria")){
     const formulario = document.getElementById("crearAveria");
