@@ -43,7 +43,6 @@ if(document.getElementById("editarAseguradora")){
     const inputs = document.querySelectorAll("#editarAseguradora input");
 
     inputs.forEach((input) => {
-        console.log(input.value);
         input.addEventListener('keyup', validarFormulario);
         input.addEventListener('blur', validarFormulario);
     })

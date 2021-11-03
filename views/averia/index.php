@@ -25,7 +25,7 @@
                 <div class="card-header text-center mb-3">
                     <h4>Nueva Averia</h4>
                 </div>
-                <form action="<?php echo constant('URL'); ?>averias/crearAveria" method="post" id="formulario">
+                <form id="crearAveria" method="post">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-6 mb-3">
@@ -35,8 +35,8 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="descripcion">Descripcion de la averia</label>
-                                <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion de la averia" cols="30" rows="10"></textarea>
+                                <label for="descripcion">Descripcion de la reparacion</label>
+                                <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion de la reparacion" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
@@ -50,6 +50,8 @@
         
             <?php require_once 'views/footer.php'?>
         </div>
+
+        <script src="<?php echo constant('URL'); ?>public/js/averias.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>
