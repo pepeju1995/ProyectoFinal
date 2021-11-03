@@ -12,7 +12,7 @@
     </head>
     
     <body>
-        <div class="container">    
+        <div class="container-fluid px-0">    
             <?php require 'views/header.php'?>
         
             <div class="row justify-content-center">

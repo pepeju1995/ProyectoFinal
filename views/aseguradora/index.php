@@ -55,7 +55,7 @@
                             <li class="list-group-item"><?php echo $aseguradora->contacto; ?></li>
                             <li class="list-group-item text-center">
                                 <?php if($_SESSION['user'] == $aseguradora->nif || $_SESSION['user'] == 'admin'){?>
-                                    <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->nif; ?>">Editar</a>
+                                    <a id="bEditar" class="btn btn-secondary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->nif; ?>">Editar</a>
                                     <?php if($_SESSION['user'] == 'admin'){?>
                                         <button id="bEliminar" class="btn btn-danger" data-nif="<?php echo $aseguradora->nif ?>">Eliminar</button>
                                     <?php } ?>

@@ -12,7 +12,7 @@
     </head>
     
     <body>
-        <div class="container">
+        <div class="container-fluid px-0">
             <?php require 'views/header.php'?>
                    
             <div class="row justify-content-center">
@@ -43,14 +43,6 @@
                         </div>
                         <li class="list-group-item"><?php echo $averias->fecha; ?></li>
                         <li class="list-group-item"><?php echo $averias->descripcion; ?></li>
-                        <?php if($_SESSION['user'] == $averias->aseguradora || $_SESSION['user'] == 'admin'){?>
-                            <li class="list-group-item text-center">
-                                <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->nif; ?>">Editar</a>
-                                <?php if($_SESSION['user'] == 'admin'){?>
-                                    <button id="bEliminar" class="btn btn-danger" data-nif="<?php echo $aseguradora->nif ?>">Eliminar</button>
-                                <?php } ?>
-                            </li>
-                        <?php }?>
                     </ul>
                 </div>
                 <?php } ?>

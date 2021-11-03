@@ -49,7 +49,7 @@ class AseguradorasModel extends Model{
     public function getById($id){
         $item = new Aseguradora();
         $query = $this->db->connect();
-        $stmt = $query->prepare("SELECT * FROM aseguradoras WHERE cif = ?");
+        $stmt = $query->prepare("SELECT * FROM aseguradoras WHERE nif = ?");
         try{
             $stmt->bind_param('s', $id);
             $stmt->execute();
@@ -67,7 +67,7 @@ class AseguradorasModel extends Model{
 
     public function update($datos){
         $query = $this->db->connect();
-        $stmt = $query->prepare("UPDATE aseguradoras SET nombre = ?, direccion = ?, localidad = ?, cp = ?, telefono = ?, email = ?, contacto = ? WHERE cif = ?");
+        $stmt = $query->prepare("UPDATE aseguradoras SET nombre = ?, direccion = ?, localidad = ?, cp = ?, telefono = ?, email = ?, contacto = ? WHERE nif = ?");
         try{
             $stmt->bind_param('sssiisss', $datos[0], $datos[2], $datos[3], $datos[4],
             $datos[5], $datos[6], $datos[7], $datos[1]);
