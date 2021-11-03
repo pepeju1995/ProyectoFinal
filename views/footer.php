@@ -1,5 +1,5 @@
-<footer class="py-5 bg-light">
-    <div class="row justify-content-around align-items-center mx-3">
+<footer class="mt-5 pt-5 bg-light">
+    <div class="row justify-content-center align-items-center mx-5">
       <div class="col-4 col-lg-5 text-center">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#cabecera" class="nav-link p-0 text-muted">Inicio</a></li>
@@ -25,12 +25,12 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-center py-4 my-4 border-top">
+    <div class="d-flex justify-content-around py-4 mt-4 border-top">
       <p>© 2021 Company, Inc. All rights reserved.</p>
       <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        <li class="ms-3"><a class="link-info" href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+        <li class="ms-3"><a class="link-warning" href="#"><i class="fab fa-instagram-square fa-2x"></i></a></li>
+        <li class="ms-3"><a class="link-primary" href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
       </ul>
     </div>
 </footer>

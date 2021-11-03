@@ -13,21 +13,24 @@ if(document.getElementById("busqueda")){
         items.forEach((item) => {
             const id = item.querySelector(".nif").textContent;
             if(id.indexOf(e.target.value) !== 0){
-                document.getElementById("card-" + id).classList.add('ocultar-requisitos');
-                numChilds ++;
+                if(!item.classList.contains('ocultar-requisitos')){
+                    item.classList.add('ocultar-requisitos');
+                    numChilds ++;
+                }
             } else {
-                if(document.getElementById("card-" + id).classList.contains('ocultar-requisitos')){
-                    document.getElementById("card-" + id).classList.remove('ocultar-requisitos');
+                if(item.classList.contains('ocultar-requisitos')){
+                    item.classList.remove('ocultar-requisitos');
                     numChilds --;
                 }
             }
         })
-
         if(childs === numChilds){
             document.querySelector("#respuesta").innerHTML = '<p id="alert" class="alert alert-warning" role="alert">No existen aseguradoras con ese NIF</p>';
         } else {
-            let parent = document.getElementById("respuesta");
-            parent.removeChild(document.getElementById("alert"));
+            if(document.getElementById("respuesta").childNodes.length > 0){
+                let parent = document.getElementById("respuesta");
+                parent.removeChild(document.getElementById("alert"));
+            }
         }
     })
 }

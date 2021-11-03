@@ -1,6 +1,6 @@
 <nav id="cabecera" class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
     <?php if(isset($_SESSION['user'])){?>
-        <div class="container-fluid">
+        <div class="container">
             <a href="<?php echo constant('URL'); ?>" class="navbar-brand">
                 <img src="<?php echo constant('URL'); ?>public/img/logo.jpg" alt="logotipo" width="30" class="d-inline-block align-text-top">
                 Soluciones Integrales
