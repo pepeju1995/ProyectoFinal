@@ -21,14 +21,14 @@
                 </div>
             </div>
             
-            <div class="row justify-content-around align-content-around"> 
+            <div class="row justify-content-around"> 
                 <?php 
                     include_once 'models/asegurado.php';
                     foreach($this->averias as $row){
                         $averias = new Averias();
                         $averias = $row;
                 ?>
-                <div id="card-<?php echo $averias->id; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
+                <div id="card-<?php echo $averias->id; ?>" class="card col-12 col-md-6 col-lg-3 p-0 mb-3" style="width: 18rem;">
                     <ul class="list-group list-group-flush">
                         <div class="card-header">
                             Aseguradora
@@ -43,14 +43,14 @@
                         </div>
                         <li class="list-group-item"><?php echo $averias->fecha; ?></li>
                         <li class="list-group-item"><?php echo $averias->descripcion; ?></li>
-                        <li class="list-group-item text-center">
-                            <?php if($_SESSION['user'] == $averias->aseguradora || $_SESSION['user'] == 'admin'){?>
+                        <?php if($_SESSION['user'] == $averias->aseguradora || $_SESSION['user'] == 'admin'){?>
+                            <li class="list-group-item text-center">
                                 <a id="bEditar" class="btn btn-primary me-3" href="<?php echo constant('URL')?>aseguradoras/verAseguradora/<?php echo $aseguradora->nif; ?>">Editar</a>
                                 <?php if($_SESSION['user'] == 'admin'){?>
                                     <button id="bEliminar" class="btn btn-danger" data-nif="<?php echo $aseguradora->nif ?>">Eliminar</button>
                                 <?php } ?>
-                            <?php }?>
-                        </li>
+                            </li>
+                        <?php }?>
                     </ul>
                 </div>
                 <?php } ?>

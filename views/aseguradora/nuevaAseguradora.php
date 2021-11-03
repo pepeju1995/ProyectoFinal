@@ -35,8 +35,8 @@
                                     <p id="nombre-valido" class="form-text ocultar-requisitos">El nombre de empresa debe contener entre 4 y 40 caracteres alfanumericos</p>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3 mb-3">
-                                    <label for="nif">nif</label>
-                                    <input class="form-control" type="text" id="nif" name="nif" placeholder="nif">
+                                    <label for="nif">NIF</label>
+                                    <input class="form-control" type="text" id="nif" name="nif" placeholder="NIF">
                                     <p id="nif-valido" class="form-text ocultar-requisitos">Introducir 8 digitos y una letra</p>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3 mb-3">

@@ -2,6 +2,39 @@ import { validarFormulario, camposAseguradora, enviarFormulario} from "./funcion
 
 const bEliminar = document.querySelectorAll("#bEliminar");
 
+
+if(document.getElementById("busqueda")){
+    const search = document.getElementById("busqueda");
+    const items = document.querySelectorAll("#items .card");
+    const childs = items.length;
+    let numChilds = 0;
+    
+    search.addEventListener("keyup", (e) => {
+        items.forEach((item) => {
+            const id = item.querySelector(".nif").textContent;
+            if(id.indexOf(e.target.value) !== 0){
+                document.getElementById("card-" + id).classList.add('ocultar-requisitos');
+                numChilds ++;
+            } else {
+                if(document.getElementById("card-" + id).classList.contains('ocultar-requisitos')){
+                    document.getElementById("card-" + id).classList.remove('ocultar-requisitos');
+                    numChilds --;
+                }
+            }
+        })
+
+        if(childs === numChilds){
+            document.querySelector("#respuesta").innerHTML = '<p id="alert" class="alert alert-warning" role="alert">No existen aseguradoras con ese NIF</p>';
+        } else {
+            let parent = document.getElementById("respuesta");
+            parent.removeChild(document.getElementById("alert"));
+        }
+    })
+}
+
+
+
+
 if(document.getElementById("editarAseguradora")){
     const formulario = document.getElementById("editarAseguradora");
     const inputs = document.querySelectorAll("#editarAseguradora input");

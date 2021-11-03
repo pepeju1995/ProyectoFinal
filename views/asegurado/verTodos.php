@@ -27,7 +27,7 @@
                         $asegurado = new Asegurado();
                         $asegurado = $row;
                 ?>
-                    <div id="card-<?php echo $asegurado->id; ?>" class="card col-12 col-md-6 col-lg-3 p-0 align-content-stretch mb-3" style="width: 18rem;">
+                    <div id="card-<?php echo $asegurado->id; ?>" class="card col-12 col-md-6 col-lg-3 p-0 mb-3" style="width: 18rem;">
                         <ul class="list-group list-group-flush">
                             <div class="card-header">
                                 Datos Personales

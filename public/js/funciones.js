@@ -40,6 +40,10 @@ const validarCampo = (expresion, input, campo) => {
     }
 }
 
+const busqueda = (valor) => {
+
+}
+
 const validarContraseña = () => {
     const pass = document.getElementById('contraseña');
     const passRep = document.getElementById('contraseña2');
