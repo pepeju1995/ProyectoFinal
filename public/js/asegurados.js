@@ -1,6 +1,27 @@
-import { validarFormulario, camposAseguradora, enviarFormulario} from "./funciones.js";
+import { validarFormulario, busqueda, camposAseguradora, enviarFormulario} from "./funciones.js";
 
 const bEliminar = document.querySelectorAll("#bEliminar");
+
+if(document.getElementById("busqueda")){
+    const search = document.getElementById("busqueda");
+    const items = document.querySelectorAll("#items .card");
+    const childs = items.length;
+    let numChilds = 0;
+    
+    search.addEventListener("keyup", (e) => {
+        items.forEach((item) => {
+            numChilds = busqueda(e, item, numChilds)
+        })
+        if(childs === numChilds){
+            document.querySelector("#respuesta").innerHTML = '<p id="alert" class="alert alert-warning" role="alert">No existen asegurados con ese NIF</p>';
+        } else {
+            if(document.getElementById("respuesta").childNodes.length > 0){
+                let parent = document.getElementById("respuesta");
+                parent.removeChild(document.getElementById("alert"));
+            }
+        }
+    })
+}
 
 
 if(document.getElementById("editarAsegurado")){

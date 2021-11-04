@@ -26,6 +26,22 @@ const camposAseguradora = {
     contacto: false
 };
 
+const busqueda = (e, item, numChilds) => {
+    const id = item.querySelector(".nif").textContent;
+    if(id.indexOf(e.target.value) !== 0){
+        if(!item.classList.contains('ocultar-requisitos')){
+            item.classList.add('ocultar-requisitos');
+            numChilds ++;
+        }
+    } else {
+        if(item.classList.contains('ocultar-requisitos')){
+            item.classList.remove('ocultar-requisitos');
+            numChilds --;
+        }
+    }
+    return numChilds;
+}
+
 const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.getElementById(campo).classList.remove('is-invalid');
@@ -145,6 +161,7 @@ const obtenerDatos = (inputs) => {
 export {
     expresiones, 
     camposAseguradora, 
+    busqueda,
     validarCampo, 
     validarContraseña, 
     validarFormulario, 

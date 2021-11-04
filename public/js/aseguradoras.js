@@ -1,4 +1,4 @@
-import { validarFormulario, camposAseguradora, enviarFormulario} from "./funciones.js";
+import { validarFormulario, busqueda, camposAseguradora, enviarFormulario} from "./funciones.js";
 
 const bEliminar = document.querySelectorAll("#bEliminar");
 
@@ -11,18 +11,7 @@ if(document.getElementById("busqueda")){
     
     search.addEventListener("keyup", (e) => {
         items.forEach((item) => {
-            const id = item.querySelector(".nif").textContent;
-            if(id.indexOf(e.target.value) !== 0){
-                if(!item.classList.contains('ocultar-requisitos')){
-                    item.classList.add('ocultar-requisitos');
-                    numChilds ++;
-                }
-            } else {
-                if(item.classList.contains('ocultar-requisitos')){
-                    item.classList.remove('ocultar-requisitos');
-                    numChilds --;
-                }
-            }
+            numChilds = busqueda(e, item, numChilds)
         })
         if(childs === numChilds){
             document.querySelector("#respuesta").innerHTML = '<p id="alert" class="alert alert-warning" role="alert">No existen aseguradoras con ese NIF</p>';

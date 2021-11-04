@@ -15,13 +15,19 @@
         <div class="container-fluid px-0">
             <?php require 'views/header.php'?>
                    
+            <div class="row mb-5 justify-content-center">
+                <div class="col-11 col-md-4">
+                    <input class="form-control text-center" id="busqueda" type="text" placeholder="Buscar Averia">
+                </div>
+            </div>
+
             <div class="row justify-content-center">
                 <div class="col-8 text-center" id="respuesta">
 
                 </div>
             </div>
             
-            <div class="row justify-content-around"> 
+            <div id="items" class="row justify-content-around"> 
                 <?php 
                     include_once 'models/asegurado.php';
                     foreach($this->averias as $row){
@@ -37,7 +43,7 @@
                         <div class="card-header">
                             Asegurado
                         </div>
-                        <li class="list-group-item"><?php echo $averias->asegurado; ?></li>
+                        <li class="list-group-item nif"><?php echo $averias->asegurado; ?></li>
                         <div class="card-header">
                             Fecha y descripcion
                         </div>
@@ -51,6 +57,7 @@
             <?php require 'views/footer.php'?>
         </div>
 
+        <script src="<?php echo constant('URL'); ?>public/js/averias.js" type="module"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/jquery-3.6.0.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/popper.min.js"></script>
         <script src="<?php echo constant('URL'); ?>public/js/bootstrap/bootstrap.min.js"></script>

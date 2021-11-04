@@ -14,6 +14,12 @@
     <body>
         <div class="container-fluid px-0">    
             <?php require 'views/header.php'?>
+
+            <div class="row mb-5 justify-content-center">
+                <div class="col-11 col-md-4">
+                    <input class="form-control text-center" id="busqueda" type="text" placeholder="Buscar Asegurado">
+                </div>
+            </div>
         
             <div class="row justify-content-center">
                 <div class="col-8 text-center" id="respuesta">
@@ -21,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-around align-content-around">
+            <div id="items" class="row justify-content-around align-content-around">
                 <?php 
                     include_once 'models/asegurado.php';
                     foreach($this->asegurados as $row){
@@ -35,7 +41,7 @@
                             </div>
                             <li class="list-group-item"><?php echo $asegurado->nombre; ?></li>
                             <li class="list-group-item"><?php echo $asegurado->apellido; ?></li>
-
+                            <li class="list-group-item nif"><?php echo $asegurado->id; ?></li>
                             <div class="card-header">
                                 Direccion
                             </div>
