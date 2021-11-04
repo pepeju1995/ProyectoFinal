@@ -15,6 +15,7 @@ class Login extends Controller {
         $pass = $_POST['contraseña'];
         if($this->model->login($user, $pass)){
             $_SESSION['user'] = $user;
+            http_response_code(200);
         } else {
             http_response_code(404);
         }
