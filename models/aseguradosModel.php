@@ -84,16 +84,14 @@ class AseguradosModel extends Model{
 
     public function drop($id){
         $query = $this->db->connect();
-        $stmt = $query->prepare("DELETE FROM asegurados WHERE nif = ?");
         try{
-            $stmt->bind_param('s', $id);
-            $stmt->execute();
+            $query->query("DELETE FROM averias WHERE asegurado = '$id'");
+            $query->query("DELETE FROM asegurados WHERE nif = '$id'");          
             return true;
         } catch(mysqli_sql_exception $e) {
             return false;
         }
     }
-    
 }
 
 ?>

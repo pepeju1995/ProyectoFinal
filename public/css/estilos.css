@@ -3,7 +3,8 @@
 }
 
 .card-header{
-    background-color: cornflowerblue;
+    background-color: cornflowerblue!important;
+    color: #F8F9FA!important;
 }
 
 .bg-primary{

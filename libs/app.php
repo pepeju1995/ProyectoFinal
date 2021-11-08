@@ -1,5 +1,4 @@
 <?php
-require_once 'controllers/errores.php';
 
 class App{
     function __construct()

@@ -82,9 +82,9 @@ class AseguradorasModel extends Model{
     public function drop($id){
         $query = $this->db->connect();
         if($_SESSION['user'] == 'admin'){
-            $query->query("DELETE FROM asegurados WHERE aseguradora = '$id'");
-            $query->query("DELETE FROM usuarios WHERE user = '$id'");
             $query->query("DELETE FROM averias WHERE aseguradora = '$id'");
+            $query->query("DELETE FROM usuarios WHERE user = '$id'");
+            $query->query("DELETE FROM asegurados WHERE aseguradora = '$id'");
             $query->query("DELETE FROM aseguradoras WHERE nif = '$id'");
         }
         return $query;
