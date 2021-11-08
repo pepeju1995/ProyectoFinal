@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
+        <title>Editar Asegurado</title>
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" href="<?php echo constant('URL'); ?>public/img/icono.ico" type="image/x-icon">
+        
         <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/estilos.css">
-        <title>Asegurado</title>
     </head>
 
     <body>
