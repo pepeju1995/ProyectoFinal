@@ -2,10 +2,10 @@
 
 define('URL', 'http://localhost/ProyectoFinal/');
 
-define('HOST', 'localhost');
-define('DB', 'solucionesintegrales');
-define('USER', 'root');
-define('PASSWORD', '');
+define('HOST', 'eu-cdbr-west-02.cleardb.net');
+define('DB', 'heroku_5d480beb9c260b2');
+define('USER', 'ba131694c1efa7');
+define('PASSWORD', '662dfc65');
 define('CHARSET', 'utf8');
 
 define('TABLAADMIN', 'CREATE TABLE IF NOT EXISTS administrador (id int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT, user varchar(9) NOT NULL UNIQUE, pass varchar(200))');
