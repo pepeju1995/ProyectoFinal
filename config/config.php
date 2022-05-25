@@ -8,7 +8,7 @@ define('USER', 'root');
 define('PASSWORD', '');
 define('CHARSET', 'utf8');
 
-define('URL2', 'http://localhost/insurance-companies/');
+define('URL2', 'https://insurance-companies.herokuapp.com');
 
 define('HOST2', 'eu-cdbr-west-02.cleardb.net');
 define('DB2', 'heroku_5d480beb9c260b2');
