@@ -31,7 +31,7 @@ if(document.getElementById("crearAveria")){
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
         if(inputs[1].value !== ""){
-            enviarFormulario("http://localhost/ProyectoFinal/averias/crearAveria", ["Averia creada correctamente", "No es posible crear Averia"], inputs);
+            enviarFormulario("http://localhost/insurance-companies/averias/crearAveria", ["Averia creada correctamente", "No es posible crear Averia"], inputs);
         } else {
             document.querySelector("#respuesta").innerHTML = '<p class="alert alert-warning" role="alert">No es pusible crear la averia</p>';
         }

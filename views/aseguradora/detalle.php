@@ -75,5 +75,6 @@
                 </div>
             </section>
         
+            <script src="<?=constant('URL')?>public/js/aseguradoras.js" type="module"></script>
             <?php require_once 'views/footer.php'?>
         

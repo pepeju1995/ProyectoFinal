@@ -27,9 +27,8 @@
 </footer>
 </div>
 
-        <script src="/public/js/login.js" type="module"></script>
-        <script src="/public/js/bootstrap/jquery-3.6.0.js"></script>
-        <script src="/public/js/bootstrap/popper.min.js"></script>
-        <script src="/public/js/bootstrap/bootstrap.min.js"></script>
+        <script src="<?=constant('URL')?>public/js/bootstrap/jquery-3.6.0.js"></script>
+        <script src="<?=constant('URL')?>public/js/bootstrap/popper.min.js"></script>
+        <script src="<?=constant('URL')?>public/js/bootstrap/bootstrap.min.js"></script>
     </body>
 </html>

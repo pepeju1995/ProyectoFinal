@@ -58,5 +58,6 @@
                 </div>
             <?php } ?>
 
+            <script src="<?=constant('URL')?>public/js/aseguradoras.js" type="module"></script>
             <?php require 'views/footer.php'?>
         

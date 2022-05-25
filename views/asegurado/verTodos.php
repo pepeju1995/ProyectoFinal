@@ -72,5 +72,6 @@
                 </div>                
             <?php } ?>
         
+            <script src="<?=constant('URL')?>public/js/asegurado.js" type="module"></script>
             <?php require 'views/footer.php'?>
         

@@ -2,16 +2,8 @@
 //LOGIN
 class LoginModel extends Model{
     function __construct(){
-        parent::__construct();
+        parent::__construct($_SERVER["HTTP_HOST"]);
         $query = $this->db->connect();
-        $query->query(constant('TABLAADMIN'));
-        $query->query(constant('TABLAASEGURADORA'));
-        $query->query(constant('TABLAUSUARIOS'));
-        $query->query(constant('TABLAASEGURADOS'));
-        $query->query(constant('TABLAAVERIAS'));
-        $clave_admin = md5('admin');
-        $crear_admin = "INSERT INTO administrador (user, pass) VALUES ('admin', '$clave_admin');";
-        $query->query($crear_admin);
     }
 
     function login($user, $pass){

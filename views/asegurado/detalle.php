@@ -82,5 +82,6 @@
                 </div>
             </section>
         
+            <script src="<?=constant('URL')?>public/js/asegurado.js" type="module"></script>
             <?php require_once 'views/footer.php'?>
        

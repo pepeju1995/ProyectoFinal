@@ -40,4 +40,5 @@
                 <?php } ?>
             </div>
         
+            <script src="<?=constant('URL')?>public/js/averias.js" type="module"></script>
             <?php require 'views/footer.php'?>

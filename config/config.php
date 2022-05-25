@@ -1,12 +1,19 @@
 <?php
 
-define('URL', 'http://localhost/ProyectoFinal/');
+define('URL', 'http://localhost/insurance-companies/');
 
-define('HOST', 'eu-cdbr-west-02.cleardb.net');
-define('DB', 'heroku_5d480beb9c260b2');
-define('USER', 'ba131694c1efa7');
-define('PASSWORD', '662dfc65');
+define('HOST', 'localhost');
+define('DB', 'solucionesintegrales');
+define('USER', 'root');
+define('PASSWORD', '');
 define('CHARSET', 'utf8');
+
+define('URL2', 'http://localhost/insurance-companies/');
+
+define('HOST2', 'eu-cdbr-west-02.cleardb.net');
+define('DB2', 'heroku_5d480beb9c260b2');
+define('USER2', 'ba131694c1efa7');
+define('PASSWORD2', '662dfc65');
 
 define('TABLAADMIN', 'CREATE TABLE IF NOT EXISTS administrador (id int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT, user varchar(9) NOT NULL UNIQUE, pass varchar(200))');
 

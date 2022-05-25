@@ -38,7 +38,7 @@ if(document.getElementById("editarAseguradora")){
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        enviarFormulario("http://localhost/ProyectoFinal/aseguradoras/actualizarAseguradora", ["Aseguradora actualizada correctamente", "No es posible actualizar"], inputs);
+        enviarFormulario("http://localhost/insurance-companies/aseguradoras/actualizarAseguradora", ["Aseguradora actualizada correctamente", "No es posible actualizar"], inputs);
     })
 }
 
@@ -55,7 +55,7 @@ if(document.getElementById('crearAseguradora')){
         e.preventDefault();
         if(camposAseguradora.nombre && camposAseguradora.contraseña && camposAseguradora.nif && camposAseguradora.direccion 
             && camposAseguradora.localidad && camposAseguradora.cp && camposAseguradora.telefono && camposAseguradora.email && camposAseguradora.contacto){
-            enviarFormulario("http://localhost/ProyectoFinal/aseguradoras/crearAseguradora", ["Aseguradora creada correctamente", "No es posible crear la aseguradora"], inputs);
+            enviarFormulario("http://localhost/insurance-companies/aseguradoras/crearAseguradora", ["Aseguradora creada correctamente", "No es posible crear la aseguradora"], inputs);
     
             document.querySelectorAll('.form-control').forEach((estilo) => {
                 estilo.classList.remove('is-valid');
@@ -74,7 +74,7 @@ bEliminar.forEach(boton => {
         const confirm = window.confirm("Estas seguro de eliminar la aseguradora " + id + "?")
 
         if(confirm){
-            const url = "http://localhost/ProyectoFinal/aseguradoras/eliminarAseguradora/" + id;
+            const url = "http://localhost/insurance-companies/aseguradoras/eliminarAseguradora/" + id;
             const http = new XMLHttpRequest();
             http.open("GET", url);
             http.send();
